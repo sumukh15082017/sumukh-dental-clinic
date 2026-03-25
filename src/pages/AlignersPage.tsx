@@ -207,7 +207,7 @@ export default function AlignersPage() {
               <div className="relative">
                 <div className="rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-6 shadow-[0_24px_55px_rgba(37,99,235,0.22)]">
                   <img
-                    src="/braces /invisble-aligners-in-ahmedabad.webp"
+                    src="/braces/invisble-aligners-in-ahmedabad.webp"
                     alt="Clear aligners treatment in Ahmedabad"
                     loading="lazy"
                   className="w-full h-72 sm:h-80 md:h-[480px] object-cover rounded-[1.5rem]"
