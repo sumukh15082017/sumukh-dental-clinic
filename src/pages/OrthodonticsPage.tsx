@@ -31,7 +31,7 @@ export default function OrthodonticsPage() {
       name: "Metal Braces",
       description: "The most common and cost-effective option",
       image:
-        "https:/braces /metal-braces-in-ahmedabad.webp",
+        "https:/braces/metal-braces-in-ahmedabad.webp",
       features: [
         "High durability and strength",
         "Most cost-effective option",
@@ -45,7 +45,7 @@ export default function OrthodonticsPage() {
       name: "Ceramic Braces",
       description: "Less visible alternative to metal braces",
       image:
-        "https:/braces /ceramic-braces-in-ahmedabad.webp",
+        "https:/braces/ceramic-braces-in-ahmedabad.webp",
       features: [
         "Tooth-colored brackets blend naturally",
         "Less noticeable than metal",
@@ -59,7 +59,7 @@ export default function OrthodonticsPage() {
       name: "Self-Ligating Braces",
       description: "Advanced bracket system",
       image:
-        "https:/braces /damon-self-ligating-braces-in-ahmedabad.webp",
+        "https:/braces/damon-self-ligating-braces-in-ahmedabad.webp",
       features: [
         "Fewer adjustments needed",
         "More comfortable treatment",
@@ -73,7 +73,7 @@ export default function OrthodonticsPage() {
       name: "Clear Aligners",
       description: "Virtually invisible orthodontic treatment",
       image:
-        "https:/braces /invisble-aligners-in-ahmedabad.webp",
+        "https:/braces/invisble-aligners-in-ahmedabad.webp",
       features: [
         "Completely removable",
         "Nearly invisible appearance",
@@ -87,7 +87,7 @@ export default function OrthodonticsPage() {
       name: "Lingual Braces",
       description: "Hidden braces behind your teeth",
       image:
-        "https:/braces /lingual-orthodontics-materials-procedures.webp",
+        "https:/braces/lingual-orthodontics-materials-procedures.webp",
       features: [
         "Completely hidden from view",
         "Custom-made for your teeth",
@@ -287,7 +287,7 @@ export default function OrthodonticsPage() {
 
               <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-[2rem] p-4 sm:p-5 md:p-6 shadow-[0_25px_60px_rgba(37,99,235,0.25)]">
                 <img
-                  src="/braces /braces-smile-closeup-ahmedabad-orthodontist.webp"
+                  src="/braces/braces-smile-closeup-ahmedabad-orthodontist.webp"
                   alt="Orthodontic braces and smile alignment treatment in ahmedabad"
                   loading="lazy"
                   className="w-full h-72 sm:h-80 md:h-[480px] object-cover rounded-[1.5rem]"

@@ -199,7 +199,7 @@ export default function AlignersPage() {
 
               {/*<div className="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-[2rem] p-4 sm:p-5 md:p-6 shadow-[0_25px_60px_rgba(37,99,235,0.25)]">
                 <img
-                  src="/braces /braces-smile-closeup-ahmedabad-orthodontist.webp"
+                  src="/braces/braces-smile-closeup-ahmedabad-orthodontist.webp"
                   alt="Orthodontic braces and smile alignment treatment in ahmedabad"
                   loading="lazy"
                   className="w-full h-72 sm:h-80 md:h-[480px] object-cover rounded-[1.5rem]"
