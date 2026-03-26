@@ -158,7 +158,7 @@ export default function PatientIntakePage() {
     <>
       <Helmet>
         <title>Patient Information & Consent Form | Sumukh Dental Clinic</title>
-        <meta name="robots" content="noindex,nofollow" />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
