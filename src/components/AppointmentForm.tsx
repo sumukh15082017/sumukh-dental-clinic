@@ -98,30 +98,32 @@ export default function AppointmentForm() {
 
       if (insertError) throw insertError;
 
-      const { error: notifyError } = await supabase.functions.invoke(
-        "send-appointment-notification",
-        {
-          body: formData,
-        }
-      );
+const { error: notifyError } = await supabase.functions.invoke(
+  "send-appointment-notification",
+  {
+    body: formData,
+  }
+);
 
-      if (notifyError) throw notifyError;
+if (notifyError) {
+  console.error("Notification function failed:", notifyError);
+}
 
-      trackGoogleAdsConversion();
-      trackMetaLead();
+trackGoogleAdsConversion();
+trackMetaLead();
 
-      setSubmitStatus("success");
-      setFormData({
-        patient_name: "",
-        patient_email: "",
-        patient_phone: "",
-        preferred_date: "",
-        preferred_time: "",
-        treatment_type: "",
-        message: "",
-      });
+setSubmitStatus("success");
+setFormData({
+  patient_name: "",
+  patient_email: "",
+  patient_phone: "",
+  preferred_date: "",
+  preferred_time: "",
+  treatment_type: "",
+  message: "",
+});
 
-      setTimeout(() => setSubmitStatus("idle"), 5000);
+setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
       console.error("Error submitting appointment:", error);
       setSubmitStatus("error");
