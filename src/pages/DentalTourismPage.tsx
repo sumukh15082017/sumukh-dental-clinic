@@ -7,7 +7,6 @@ import {
   HeartHandshake,
   Globe,
   MapPin,
-  Phone,
   Stethoscope,
   Shield,
   Smile,
@@ -16,6 +15,7 @@ import {
   ArrowRight,
   Sparkles,
   Microscope,
+  Star,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -173,7 +173,70 @@ export default function DentalTourismPage() {
     },
   ];
 
-  const trackTourismClick = (action: "book-consultation" | "explore-services") => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.sumukhdentalclinic.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Dental Tourism",
+        item: "https://www.sumukhdentalclinic.com/dental-tourism",
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    name: "Sumukh Dental Clinic",
+    url: "https://www.sumukhdentalclinic.com/dental-tourism",
+    image: "https://www.sumukhdentalclinic.com/dental-tourism-in-ahmedabad.webp",
+    telephone: "+91-8799527524",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
+      postalCode: "380060",
+      addressCountry: "IN",
+    },
+    areaServed: "International Patients",
+    medicalSpecialty: "Dentistry",
+    priceRange: "₹₹",
+    sameAs: [
+      "https://www.instagram.com/sumukhdentalclinic/",
+      "https://www.facebook.com/profile.php?id=61572468867668",
+    ],
+  };
+
+  const trackTourismClick = (
+    action:
+      | "book-consultation"
+      | "explore-services"
+      | "schedule-evaluation"
+      | "smile-simulation"
+  ) => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
         send_to: "AW-11330826115/Eg70C06e8YscEIPf-poq",
@@ -215,27 +278,75 @@ export default function DentalTourismPage() {
         <title>
           Dental Tourism in Ahmedabad | International Dental Care | Sumukh Dental Clinic
         </title>
+
         <meta
           name="description"
-          content="Plan your dental tourism in Ahmedabad with Sumukh Dental Clinic. We offer consultation, treatment planning, travel-friendly scheduling, and advanced dental care for international patients."
+          content="Looking for dental tourism in Ahmedabad? Get dental implants, smile makeovers, crowns, veneers, orthodontic treatment, and personalized care for international patients at Sumukh Dental Clinic."
         />
+
+        <meta
+          name="keywords"
+          content="dental tourism Ahmedabad, dental tourism India, international dental care Ahmedabad, dental implants Ahmedabad, smile makeover Ahmedabad, dental clinic for international patients India, orthodontist Ahmedabad"
+        />
+
         <link
           rel="canonical"
-          href="https://sumukhdentalclinic.com/dental-tourism"
+          href="https://www.sumukhdentalclinic.com/dental-tourism"
         />
+
+        <meta
+          property="og:title"
+          content="Dental Tourism in Ahmedabad | International Dental Care | Sumukh Dental Clinic"
+        />
+        <meta
+          property="og:description"
+          content="Plan your dental treatment in Ahmedabad with personalized support, travel-friendly scheduling, and advanced dental care for international patients."
+        />
+        <meta
+          property="og:url"
+          content="https://www.sumukhdentalclinic.com/dental-tourism"
+        />
+        <meta
+          property="og:image"
+          content="https://www.sumukhdentalclinic.com/dental-tourism-in-ahmedabad.webp"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta
+          name="twitter:title"
+          content="Dental Tourism in Ahmedabad | International Dental Care"
+        />
+        <meta
+          name="twitter:description"
+          content="Advanced dental care in Ahmedabad for international patients with personalized planning and travel-friendly support."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.sumukhdentalclinic.com/dental-tourism-in-ahmedabad.webp"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
 
       <Navigation />
 
       <main className="pt-24 sm:pt-28 md:pt-32 bg-white">
-        {/* HERO */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5 shadow-sm">
                   <Sparkles size={16} />
-                  Dental Tourism
+                  Dental Tourism in Ahmedabad
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-6">
@@ -243,13 +354,50 @@ export default function DentalTourismPage() {
                   <span className="text-blue-500"> Smooth Travel Experience.</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  We help international patients combine high-quality dental
-                  treatment in Ahmedabad with comfort, convenience, and
-                  personalized support. From consultation to travel planning and
-                  follow-up, your journey is designed to feel clear and
-                  stress-free.
+                <p className="text-xl md:text-2xl text-blue-500 font-semibold mb-4">
+                  Personalized international dental care in Ahmedabad, India.
                 </p>
+
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
+                  Looking for dental tourism in Ahmedabad? At Sumukh Dental
+                  Clinic, we help international patients plan advanced dental
+                  treatment in India including{" "}
+                  <Link
+                    to="/implants"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental implants
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/smile-makeover"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    smile makeovers
+                  </Link>
+                  , crowns, veneers, and{" "}
+                  <Link
+                    to="/orthodontics"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    orthodontic treatment
+                  </Link>
+                  . From consultation to travel planning and follow-up, your
+                  dental journey is designed to be smooth, comfortable, and
+                  well-coordinated.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <Star size={16} className="text-yellow-500 fill-yellow-400" />
+                    International Patient Support
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <MapPin size={16} className="text-blue-600" />
+                    Ahmedabad • Science City • Sola
+                  </div>
+                </div>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
                   <button
@@ -268,42 +416,54 @@ export default function DentalTourismPage() {
                   </button>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 pt-2">
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-blue-900">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8 md:mt-10 text-center">
+                  <div className="flex flex-col items-start sm:items-center">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 leading-tight">
                       Planned
                     </p>
-                    <p className="text-sm text-slate-500">Treatment Journey</p>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-snug">
+                      Treatment Journey
+                    </p>
                   </div>
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-blue-900">
+
+                  <div className="flex flex-col items-center">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 leading-tight">
                       Smooth
                     </p>
-                    <p className="text-sm text-slate-500">Travel Support</p>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-snug">
+                      Travel Support
+                    </p>
                   </div>
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-blue-900">
+
+                  <div className="flex flex-col items-end sm:items-center">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 leading-tight">
                       Trusted
                     </p>
-                    <p className="text-sm text-slate-500">Patient Care</p>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-snug text-right sm:text-center">
+                      Patient Care
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-6 md:p-8 shadow-[0_24px_55px_rgba(37,99,235,0.22)]">
-                  <img
-                    src="/dental-tourism-in-ahmedabad.webp"
-                    alt="Dental tourism consultation and treatment planning in Ahmedabad"
-                    className="w-full rounded-2xl object-cover shadow-lg"
-                  />
+              <div className="relative flex justify-center md:justify-end">
+                <div className="relative w-full max-w-[700px]">
+                  <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
+                    <div className="w-full h-[360px] sm:h-[460px] md:h-[620px] rounded-[1.5rem] overflow-hidden">
+                      <img
+                        src="/dental-tourism-in-ahmedabad.webp"
+                        alt="Dental tourism consultation and treatment planning in Ahmedabad"
+                        loading="lazy"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* TRUST STRIP */}
         <section className="py-8 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -326,7 +486,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* WHAT IS DENTAL TOURISM + BENEFITS */}
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -365,7 +524,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* WHY CHOOSE US */}
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-blue-50 p-8 md:p-12 shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
@@ -402,7 +560,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* WHY DENTAL TOURISM */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -471,7 +628,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* SERVICES */}
         <section id="tourism-services" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -511,7 +667,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* TREATMENT OPTIONS */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -543,7 +698,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* PROCESS */}
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -581,7 +735,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* INDIA / AHMEDABAD */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8">
@@ -646,7 +799,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-blue-500 to-blue-700">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
@@ -665,7 +817,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
@@ -701,7 +852,6 @@ export default function DentalTourismPage() {
           </div>
         </section>
 
-        {/* FINAL CTA */}
         <section className="pb-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 md:p-12 shadow-[0_18px_45px_rgba(15,23,42,0.08)] text-center">
@@ -725,28 +875,36 @@ export default function DentalTourismPage() {
           </div>
         </section>
       </main>
-<RelatedTreatments
-  title="Popular Treatments for International Patients"
-  subtitle="Many international patients travel for advanced, aesthetic, and full-smile rehabilitation procedures depending on their goals and timeline."
-  links={[
-    {
-      title: "Dental Implants",
-      href: "/implants",
-      description: "A popular option for replacing missing teeth with stable, natural-looking long-term support.",
-    },
-    {
-      title: "Smile Transformation",
-      href: "/smile-makeover",
-      description: "A personalized approach that may combine multiple cosmetic and restorative procedures.",
-    },
-    {
-      title: "Orthodontic Treatment",
-      href: "/orthodontics",
-      description: "Braces and aligner-based treatment for smile correction, bite improvement, and long-term alignment.",
-    },
-  ]}
-/>
-      <AppointmentForm />
+
+      <RelatedTreatments
+        title="Popular Treatments for International Patients"
+        subtitle="Many international patients travel for advanced, aesthetic, and full-smile rehabilitation procedures depending on their goals and timeline."
+        links={[
+          {
+            title: "Dental Implants",
+            href: "/implants",
+            description:
+              "A popular option for replacing missing teeth with stable, natural-looking long-term support.",
+          },
+          {
+            title: "Smile Transformation",
+            href: "/smile-makeover",
+            description:
+              "A personalized approach that may combine multiple cosmetic and restorative procedures.",
+          },
+          {
+            title: "Orthodontic Treatment",
+            href: "/orthodontics",
+            description:
+              "Braces and aligner-based treatment for smile correction, bite improvement, and long-term alignment.",
+          },
+        ]}
+      />
+
+      <section id="appointment">
+        <AppointmentForm />
+      </section>
+
       <Footer />
       <FloatingContact />
       <SocialFollow />

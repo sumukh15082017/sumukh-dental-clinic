@@ -10,6 +10,8 @@ import {
   ShieldCheck,
   Microscope,
   HeartHandshake,
+  Star,
+  MapPin,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -129,8 +131,69 @@ export default function ImplantsPage() {
     },
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.sumukhdentalclinic.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Dental Implants",
+        item: "https://www.sumukhdentalclinic.com/implants",
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    name: "Sumukh Dental Clinic",
+    url: "https://www.sumukhdentalclinic.com/implants",
+    image:
+      "https://www.sumukhdentalclinic.com/dental-implant-in-ahmedabad.webp",
+    telephone: "+91-8799527524",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
+      postalCode: "380060",
+      addressCountry: "IN",
+    },
+    areaServed: "Ahmedabad",
+    medicalSpecialty: "Dentistry",
+    priceRange: "₹₹",
+    sameAs: [
+      "https://www.instagram.com/sumukhdentalclinic/",
+      "https://www.facebook.com/profile.php?id=61572468867668",
+    ],
+  };
+
   const trackImplantClick = (
-    action: "book-implant-consultation" | "explore-implant-options"
+    action:
+      | "book-implant-consultation"
+      | "explore-implant-options"
+      | "schedule-implant-evaluation"
   ) => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
@@ -148,7 +211,7 @@ export default function ImplantsPage() {
     }
   };
 
-  const scrollToappointment = () => {
+  const scrollToAppointment = () => {
     trackImplantClick("book-implant-consultation");
     const element = document.getElementById("appointment");
     if (element) {
@@ -171,13 +234,59 @@ export default function ImplantsPage() {
     <>
       <Helmet>
         <title>
-          Dental Implants in Ahmedabad | Tooth Replacement | Sumukh Dental Clinic
+          Best Dental Implants in Ahmedabad | Tooth Replacement Expert | Sumukh Dental Clinic
         </title>
         <meta
           name="description"
-          content="Get dental implants in Ahmedabad at Sumukh Dental Clinic. Restore missing teeth with single tooth implants, multiple implants, and full-arch solutions planned for comfort, function, and natural-looking results."
+          content="Looking for dental implants in Ahmedabad? Restore missing teeth with single tooth implants, multiple implants, and full-arch solutions at Sumukh Dental Clinic with personalized planning and natural-looking results."
         />
-        <link rel="canonical" href="https://sumukhdentalclinic.com/implants" />
+        <meta
+          name="keywords"
+          content="dental implants Ahmedabad, tooth replacement Ahmedabad, single tooth implant Ahmedabad, full arch implants Ahmedabad, implant dentist Ahmedabad, missing teeth replacement Ahmedabad"
+        />
+        <link rel="canonical" href="https://www.sumukhdentalclinic.com/implants" />
+
+        <meta
+          property="og:title"
+          content="Best Dental Implants in Ahmedabad | Tooth Replacement Expert"
+        />
+        <meta
+          property="og:description"
+          content="Advanced dental implant treatment in Ahmedabad for single tooth replacement, multiple implants, and full-arch rehabilitation."
+        />
+        <meta
+          property="og:url"
+          content="https://www.sumukhdentalclinic.com/implants"
+        />
+        <meta
+          property="og:image"
+          content="https://www.sumukhdentalclinic.com/dental-implant-in-ahmedabad.webp"
+        />
+        <meta property="og:type" content="website" />
+
+        <meta
+          name="twitter:title"
+          content="Best Dental Implants in Ahmedabad | Tooth Replacement Expert"
+        />
+        <meta
+          name="twitter:description"
+          content="Dental implants in Ahmedabad by Sumukh Dental Clinic for natural-looking and long-lasting tooth replacement."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.sumukhdentalclinic.com/dental-implant-in-ahmedabad.webp"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
 
       <Navigation />
@@ -190,7 +299,7 @@ export default function ImplantsPage() {
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5 shadow-sm">
                   <Sparkles size={16} />
-                  Dental Implants
+                  Dental Implants in Ahmedabad
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-6">
@@ -198,16 +307,34 @@ export default function ImplantsPage() {
                   <span className="text-blue-500"> Rebuild Your Confidence.</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  Dental implants are one of the most advanced and
-                  natural-looking solutions for missing teeth. They restore
-                  chewing, improve smile aesthetics, and support long-term oral
-                  health with stability and comfort.
+                <p className="text-xl md:text-2xl text-blue-500 font-semibold mb-4">
+                  Natural-Looking Dental Implants in Ahmedabad for Long-Term Function and Comfort.
                 </p>
+
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
+                  Looking for dental implants in Ahmedabad? At Sumukh Dental
+                  Clinic, we provide advanced tooth replacement solutions for
+                  single missing teeth, multiple missing teeth, and full-arch
+                  rehabilitation. Dental implants are one of the most reliable
+                  and natural-looking options for restoring chewing, smile
+                  aesthetics, and long-term oral health.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <Star size={16} className="text-yellow-500 fill-yellow-400" />
+                    167+ Google Reviews
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <MapPin size={16} className="text-blue-600" />
+                    Ahmedabad • Science City • Sola
+                  </div>
+                </div>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
                   <button
-                    onClick={scrollToappointment}
+                    onClick={scrollToAppointment}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-white font-bold shadow-md transition hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
                   >
                     Book Implant Consultation
@@ -244,15 +371,20 @@ export default function ImplantsPage() {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-6 md:p-8 shadow-[0_24px_55px_rgba(37,99,235,0.22)]">
-                  <img
-                    src="/dental-implant-in-ahmedabad.webp"
-                    alt="Dental implant treatment and tooth replacement in Ahmedabad"
-                    className="w-full rounded-2xl object-cover shadow-lg"
-                  />
-                </div>
-              </div>
+              <div className="relative flex justify-center md:justify-end">
+  <div className="relative w-full max-w-xl">
+    <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
+      <div className="w-full h-[320px] sm:h-[380px] md:h-[520px] rounded-[1.5rem] overflow-hidden bg-white/10">
+        <img
+          src="/dental-implant-in-ahmedabad.webp"
+          alt="Dental implants treatment in Ahmedabad for missing teeth replacement"
+          loading="lazy"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </section>
@@ -289,19 +421,30 @@ export default function ImplantsPage() {
                   What Are Dental Implants?
                 </h2>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                  Dental implants are titanium fixtures placed into the jawbone to
-                  function as artificial tooth roots. They provide secure support for <Link to="/crowns" className="text-blue-600 font-semibold hover:underline"> crowns and bridges</Link>, or full-arch restorations and are designed to look,
-                  feel, and function like natural teeth.
+                  Dental implants are titanium fixtures placed into the jawbone
+                  to function as artificial tooth roots. They provide secure
+                  support for{" "}
+                  <Link
+                    to="/crowns"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    crowns and bridges
+                  </Link>
+                  , or full-arch restorations and are designed to look, feel,
+                  and function like natural teeth.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Unlike removable options, implants are stable and secure. They also
-                  help maintain jawbone support in areas where teeth are missing,
-                  making them one of the most comprehensive tooth replacement options available.
+                  Unlike removable options, implants are stable and secure. They
+                  also help maintain jawbone support in areas where teeth are
+                  missing, making them one of the most comprehensive tooth
+                  replacement options available.
                 </p>
               </div>
 
               <div className={premiumCard}>
-                <h3 className="text-2xl font-bold text-blue-900 mb-5">Key Benefits</h3>
+                <h3 className="text-2xl font-bold text-blue-900 mb-5">
+                  Key Benefits
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -326,8 +469,9 @@ export default function ImplantsPage() {
                   Why Patients Choose Sumukh Dental Clinic
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  We combine modern implant planning, careful diagnosis, and patient-focused
-                  care to provide precise, comfortable, and predictable treatment outcomes.
+                  We combine modern implant planning, careful diagnosis, and
+                  patient-focused care to provide precise, comfortable, and
+                  predictable treatment outcomes.
                 </p>
               </div>
 
@@ -340,7 +484,8 @@ export default function ImplantsPage() {
                     Precision Diagnosis
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Every implant case begins with careful clinical evaluation and treatment planning.
+                    Every implant case begins with careful clinical evaluation
+                    and treatment planning.
                   </p>
                 </div>
 
@@ -352,7 +497,8 @@ export default function ImplantsPage() {
                     Modern Clinical Approach
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    We use updated techniques and modern planning principles for better predictability.
+                    We use updated techniques and modern planning principles for
+                    better predictability.
                   </p>
                 </div>
 
@@ -364,7 +510,8 @@ export default function ImplantsPage() {
                     Patient Comfort
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    We focus on clear guidance, comfort, and support throughout every stage of treatment.
+                    We focus on clear guidance, comfort, and support throughout
+                    every stage of treatment.
                   </p>
                 </div>
               </div>
@@ -380,8 +527,9 @@ export default function ImplantsPage() {
                 Why Patients Choose Implants
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Dental implants are often preferred because they combine aesthetics,
-                function, comfort, and long-term support in one solution.
+                Dental implants are often preferred because they combine
+                aesthetics, function, comfort, and long-term support in one
+                solution.
               </p>
             </div>
 
@@ -390,9 +538,12 @@ export default function ImplantsPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Smile className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Natural Appearance</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Natural Appearance
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Implant-supported teeth are custom-designed to blend naturally with your smile.
+                  Implant-supported teeth are custom-designed to blend naturally
+                  with your smile.
                 </p>
               </div>
 
@@ -400,9 +551,12 @@ export default function ImplantsPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Shield className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Reliable Support</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Reliable Support
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Implants create secure support for chewing, speaking, and daily confidence.
+                  Implants create secure support for chewing, speaking, and
+                  daily confidence.
                 </p>
               </div>
 
@@ -410,9 +564,12 @@ export default function ImplantsPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Check className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Tooth-Sparing</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Tooth-Sparing
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Unlike some alternatives, implants do not depend on adjacent teeth for support.
+                  Unlike some alternatives, implants do not depend on adjacent
+                  teeth for support.
                 </p>
               </div>
 
@@ -420,9 +577,12 @@ export default function ImplantsPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Clock className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Long-Term Value</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Long-Term Value
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  With proper care, implants can provide durable long-term function and aesthetics.
+                  With proper care, implants can provide durable long-term
+                  function and aesthetics.
                 </p>
               </div>
             </div>
@@ -437,8 +597,8 @@ export default function ImplantsPage() {
                 Types of Implant Solutions
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                We offer implant solutions based on the number of missing teeth and
-                the type of restoration best suited to your needs.
+                We offer implant solutions based on the number of missing teeth
+                and the type of restoration best suited to your needs.
               </p>
             </div>
 
@@ -448,7 +608,9 @@ export default function ImplantsPage() {
                   <div className="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md">
                     <type.icon className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{type.title}</h3>
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">
+                    {type.title}
+                  </h3>
                   <p className="text-slate-600 mb-6">{type.description}</p>
                   <ul className="space-y-3">
                     {type.features.map((feature, idx) => (
@@ -474,8 +636,8 @@ export default function ImplantsPage() {
                 The Implant Process
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                Every implant journey is planned carefully for precision, function,
-                comfort, and long-term stability.
+                Every implant journey is planned carefully for precision,
+                function, comfort, and long-term stability.
               </p>
             </div>
 
@@ -486,7 +648,9 @@ export default function ImplantsPage() {
                     <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold mb-4 shadow-md">
                       {item.step}
                     </div>
-                    <h3 className="text-xl font-bold text-blue-900 mb-3">{item.title}</h3>
+                    <h3 className="text-xl font-bold text-blue-900 mb-3">
+                      {item.title}
+                    </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
                       {item.description}
                     </p>
@@ -514,7 +678,10 @@ export default function ImplantsPage() {
               approach for your smile and function.
             </p>
             <button
-              onClick={scrollToappointment}
+              onClick={() => {
+                trackImplantClick("schedule-implant-evaluation");
+                scrollToAppointment();
+              }}
               className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg font-semibold"
             >
               Schedule Your Consultation
@@ -540,7 +707,9 @@ export default function ImplantsPage() {
                   key={index}
                   className="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50/30 p-6 shadow-sm"
                 >
-                  <h3 className="text-xl font-bold text-blue-900 mb-3">{faq.q}</h3>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">
+                    {faq.q}
+                  </h3>
                   <p className="text-slate-600 leading-relaxed">{faq.a}</p>
                 </div>
               ))}
@@ -556,12 +725,13 @@ export default function ImplantsPage() {
                 Restore Your Smile with Confidence
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
-                Whether you need a single tooth replacement or a full-arch implant
-                solution, we can help you choose the right treatment plan with clarity and care.
+                Whether you need a single tooth replacement or a full-arch
+                implant solution, we can help you choose the right treatment
+                plan with clarity and care.
               </p>
 
               <button
-                onClick={scrollToappointment}
+                onClick={scrollToAppointment}
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
               >
                 Book an Implant Consultation
@@ -571,25 +741,30 @@ export default function ImplantsPage() {
           </div>
         </section>
       </main>
+
       <RelatedTreatments
-  links={[
-    {
-      title: "Crowns & Bridges",
-      href: "/crowns",
-      description: "Implants are often restored with crowns or bridge-supported solutions for long-term function.",
-    },
-    {
-      title: "Preventive & Restorative Dentistry",
-      href: "/preventive-restorative",
-      description: "Supporting gum and tooth health can improve long-term implant stability and maintenance.",
-    },
-    {
-      title: "Smile Transformation",
-      href: "/smile-makeover",
-      description: "Dental implants may also be part of a larger smile rehabilitation or aesthetic treatment plan.",
-    },
-  ]}
-/>
+        links={[
+          {
+            title: "Crowns & Bridges",
+            href: "/crowns",
+            description:
+              "Implants are often restored with crowns or bridge-supported solutions for long-term function.",
+          },
+          {
+            title: "Preventive & Restorative Dentistry",
+            href: "/preventive-restorative",
+            description:
+              "Supporting gum and tooth health can improve long-term implant stability and maintenance.",
+          },
+          {
+            title: "Smile Transformation",
+            href: "/smile-makeover",
+            description:
+              "Dental implants may also be part of a larger smile rehabilitation or aesthetic treatment plan.",
+          },
+        ]}
+      />
+
       <AppointmentForm />
       <Footer />
       <FloatingContact />

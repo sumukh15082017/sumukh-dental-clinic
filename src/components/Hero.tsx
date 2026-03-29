@@ -6,7 +6,9 @@ import {
   Wand2,
   ShieldCheck,
   Stethoscope,
+  Star,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -68,13 +70,28 @@ export default function Hero() {
             </h1>
 
             <p className="text-[1rem] sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-8 sm:leading-relaxed max-w-[36rem]">
-              Experience world-class orthodontic care, braces, clear aligners,
-              dental implants, and smile-focused treatment at Sumukh Dental
-              Clinic in Ahmedabad, where expertise meets compassion for your
-              healthiest and most confident smile.
+              Looking for the best dental care in Ahmedabad? At Sumukh Dental
+              Clinic, we provide advanced braces,{" "}
+              <Link
+                to="/aligners"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                clear aligners and Invisalign treatment
+              </Link>
+              ,{" "}
+              <Link
+                to="/implants"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                dental implants
+              </Link>
+              , and smile-focused dental care. Led by Dr. Dipen Thakker, our
+              Ahmedabad clinic combines personalized treatment planning, modern
+              technology, and compassionate care to create healthier, more
+              confident smiles.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-5">
               <button
                 onClick={scrollToAppointment}
                 className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3.5 rounded-full shadow-md hover:bg-blue-700 hover:shadow-xl hover:scale-105 transition-all duration-300 font-bold text-base"
@@ -100,7 +117,7 @@ export default function Hero() {
                 </span>
               </a>
             </div>
-
+            
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
                 <div className="bg-blue-100 w-11 h-11 rounded-full flex items-center justify-center mb-3">
@@ -149,9 +166,9 @@ export default function Hero() {
               <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-[2rem] p-4 sm:p-5 md:p-6 shadow-[0_25px_60px_rgba(37,99,235,0.25)]">
                 <img
                   src="/orthodontist-ahmedabad-braces-treatment.webp"
-                  alt="Best orthodontist in Ahmedabad providing braces and smile treatment"
+                  alt="Dr Dipen Thakker orthodontist in Ahmedabad providing braces and Invisalign treatment"
                   loading="lazy"
-                  className="w-full h-72 sm:h-80 md:h-[460px] object-cover rounded-[1.5rem]"
+                  className="w-full h-72 sm:h-80 md:h-[540px] object-cover rounded-[1.5rem]"
                 />
               </div>
             </div>
