@@ -41,6 +41,28 @@ export default function FloatingContact() {
   const openDirections = () => {
     trackConversion("map");
 
+    const isAppleDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    // ONLY for Apple devices:
+    // Open Google Maps app directly on click so popup is not blocked.
+    if (isAppleDevice) {
+      const googleMapsAppUrl = `comgooglemaps://?daddr=${clinicLatitude},${clinicLongitude}&directionsmode=driving`;
+
+      // Fallback if Google Maps app is not installed
+      const googleMapsWebFallback = `https://www.google.com/maps/dir/?api=1&destination=${clinicLatitude},${clinicLongitude}&travelmode=driving`;
+
+      window.location.href = googleMapsAppUrl;
+
+      setTimeout(() => {
+        window.location.href = googleMapsWebFallback;
+      }, 1200);
+
+      return;
+    }
+
+    // Keep existing behavior unchanged for desktop + Android
     if (!navigator.geolocation) {
       window.open(
         `https://www.google.com/maps/dir/?api=1&destination=${clinicLatitude},${clinicLongitude}`,
