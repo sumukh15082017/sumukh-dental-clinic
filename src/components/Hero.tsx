@@ -71,7 +71,13 @@ export default function Hero() {
 
             <p className="text-[1rem] sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-8 sm:leading-relaxed max-w-[36rem]">
               Looking for the best dental care in Ahmedabad? At Sumukh Dental
-              Clinic, we provide advanced braces,{" "}
+              Clinic, we provide advanced {" "}
+              <Link
+                to="/orthodontics"
+                className="text-blue-600 font-semibold hover:underline"
+              > braces
+                 </Link>,
+              {" "}
               <Link
                 to="/aligners"
                 className="text-blue-600 font-semibold hover:underline"
