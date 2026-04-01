@@ -8,8 +8,12 @@ import {
   SlidersHorizontal,
   Building2,
   MapPin,
+  Phone,
+  Star,
+  Check,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
@@ -61,14 +65,12 @@ function BeforeAfterSlider({
   return (
     <div className="relative overflow-hidden rounded-[1.75rem] border border-blue-100 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-blue-50">
-        {/* After image stays fixed */}
         <img
           src={afterImage}
           alt={`${title} after treatment result`}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        {/* Before image stays fixed and is only clipped, not stretched */}
         <div
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -80,7 +82,6 @@ function BeforeAfterSlider({
           />
         </div>
 
-        {/* Divider */}
         <div
           className="absolute inset-y-0 z-20"
           style={{ left: `${position}%`, transform: "translateX(-50%)" }}
@@ -101,7 +102,6 @@ function BeforeAfterSlider({
         </div>
       </div>
 
-      {/* Slider controls below image */}
       <div className="px-5 pb-5 pt-4">
         <input
           type="range"
@@ -119,6 +119,19 @@ function BeforeAfterSlider({
     </div>
   );
 }
+
+const CLINIC_NAME = "Sumukh Dental Clinic";
+const DOCTOR_NAME = "Dr. Dipen Thakker";
+const DOCTOR_DEGREE = "MDS Orthodontist";
+const PHONE = "+91-8799527524";
+const ADDRESS_STREET =
+  "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola";
+const ADDRESS_CITY = "Ahmedabad";
+const ADDRESS_STATE = "Gujarat";
+const ADDRESS_PINCODE = "380060";
+const SITE_BASE = "https://www.sumukhdentalclinic.com";
+const CANONICAL_URL = `${SITE_BASE}/gallery`;
+const OG_IMAGE = `${SITE_BASE}/before-and-after-dental-treatment-photographs.webp`;
 
 export default function GalleryPage() {
   const galleryCategories: GalleryCategory[] = [
@@ -189,8 +202,10 @@ export default function GalleryPage() {
           title: "Mandibular Advancement Case",
           treatment: "Twin Block Appliance Followed By Metal Braces",
           duration: "28 Months",
-          beforeImage: "/Gallery/before-treatment-photo-of-a-mandibular-advancement-case-treated-with-twin-block-and-braces.webp",
-          afterImage: "/Gallery/after-treatment-photo-of-a-mandibular-advancement-case-treated-with-twin-block-and-braces.webp",
+          beforeImage:
+            "/Gallery/before-treatment-photo-of-a-mandibular-advancement-case-treated-with-twin-block-and-braces.webp",
+          afterImage:
+            "/Gallery/after-treatment-photo-of-a-mandibular-advancement-case-treated-with-twin-block-and-braces.webp",
           points: [
             "Improved alignment",
             "Better smile balance",
@@ -259,11 +274,11 @@ export default function GalleryPage() {
       id: "Invisalign/Clear Aligners",
       title: "Aligner Cases",
       description:
-        "Before-and-after implant cases showing replacement of missing teeth with improved aesthetics and function.",
+        "Before-and-after aligner cases showing invisible smile correction, improved alignment, and bite refinement.",
       icon: Shield,
       cases: [
         {
-          title: "Palatally Erupted Canines(Cross Bite)",
+          title: "Palatally Erupted Canines (Cross Bite)",
           treatment: "Invisalign Aligners",
           duration: "18 Months",
           beforeImage:
@@ -271,23 +286,23 @@ export default function GalleryPage() {
           afterImage:
             "/Gallery/after-treatment-photo-of-a-palatally-placed-canines-case-treated-with-invisalign-aligners.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Improved smile alignment",
+            "More aesthetic treatment approach",
+            "Better bite correction",
           ],
         },
         {
           title: "Crowding And Mandibular Advancement",
-          treatment: "Invisalign ALigners With MA",
+          treatment: "Invisalign Aligners With MA",
           duration: "20 Months",
           beforeImage:
             "/Gallery/before-treatment-photo-of-crowding-case-treated-with-mandibular-advancement-invisalign.webp",
           afterImage:
             "/Gallery/after-treatment-photo-of-crowding-case-treated-with-mandibular-advancement-invisalign.webp",
           points: [
-            "Restored missing teeth",
-            "Improved function",
-            "Balanced smile restoration",
+            "Improved alignment",
+            "Better functional correction",
+            "Balanced smile outcome",
           ],
         },
         {
@@ -299,23 +314,23 @@ export default function GalleryPage() {
           afterImage:
             "/Gallery/after-treatment-photo-of-crowding-and-canine-crossbite-treated-with-invisalign.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Improved smile alignment",
+            "Refined bite relationship",
+            "More confident smile",
           ],
         },
         {
           title: "Maxillary Arch Distalisation",
-          treatment: "Invisaling Aligners",
+          treatment: "Invisalign Aligners",
           duration: "Ongoing",
           beforeImage:
             "/Gallery/before-treatment-photo-of-a-distalisation-case-treated-with-invisalign-aligners.webp",
           afterImage:
             "/Gallery/after-treatment-photo-of-a-distalisation-case-treated-with-invisalign-aligners.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Improved alignment",
+            "Aesthetic orthodontic correction",
+            "Better arch relationship",
           ],
         },
       ],
@@ -331,7 +346,7 @@ export default function GalleryPage() {
           title: "Upper Missing Teeth Case",
           treatment: "Dental Implants",
           duration: "Varies by case",
-           beforeImage:
+          beforeImage:
             "/Gallery/Implants/before-xray-of-dental-implant-in-upper-teeth.webp",
           afterImage:
             "/Gallery/Implants/after-xray-of-dental-implant-in-upper-teeth.webp",
@@ -356,7 +371,7 @@ export default function GalleryPage() {
           ],
         },
         {
-          title: "Indiret Sinus Lift Case",
+          title: "Indirect Sinus Lift Case",
           treatment: "Dental Implants + Indirect Sinus Lift With Densah Technique",
           duration: "Varies by case",
           beforeImage:
@@ -365,8 +380,8 @@ export default function GalleryPage() {
             "/Gallery/Implants/after-xray-of-indirect-sinus-lift-with-densah-and-dental-implant-in-upper-teeth.webp",
           points: [
             "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Bone support improvement",
+            "Enhanced restorative stability",
           ],
         },
         {
@@ -379,8 +394,8 @@ export default function GalleryPage() {
             "/Gallery/Implants/after-xray-of-direct-sinus-lift-and-dental-implant-in-upper-teeth.webp",
           points: [
             "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Bone support improvement",
+            "Long-term implant support",
           ],
         },
       ],
@@ -412,7 +427,7 @@ export default function GalleryPage() {
       id: "Root canal treatment",
       title: "Root Canal Cases",
       description:
-        "Before-and-after implant cases showing replacement of missing teeth with improved aesthetics and function.",
+        "Before-and-after root canal cases showing infection control, tooth preservation, and restorative improvement.",
       icon: Shield,
       cases: [
         {
@@ -424,23 +439,23 @@ export default function GalleryPage() {
           afterImage:
             "/Gallery/root canal/after-photo-of-a-single-seating-root-canal.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Infection control",
+            "Natural tooth preservation",
+            "Pain relief and function restoration",
           ],
         },
         {
           title: "Re-Root Canal Treatment",
-          treatment: "Root canal Treatment Of A Previously Treated Tooth",
+          treatment: "Root Canal Treatment Of A Previously Treated Tooth",
           duration: "Phased treatment",
           beforeImage:
             "/Gallery/root canal/before-photo-of-a-re-root-canal-treatment.webp",
           afterImage:
             "/Gallery/root canal/after-photo-of-a-re-root-canal-treatment.webp",
           points: [
-            "Restored missing teeth",
-            "Improved function",
-            "Balanced smile restoration",
+            "Tooth preservation",
+            "Improved healing support",
+            "Restorative stability",
           ],
         },
         {
@@ -452,13 +467,13 @@ export default function GalleryPage() {
           afterImage:
             "/Gallery/root canal/after-photo-of-a-root-canal-of-upper-teeth.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Infection control",
+            "Natural tooth preservation",
+            "Improved comfort",
           ],
         },
         {
-          title: "Root Canal Treatment Of Lower teeth",
+          title: "Root Canal Treatment Of Lower Teeth",
           treatment: "Root Canal Treatment",
           duration: "Varies by case",
           beforeImage:
@@ -466,9 +481,9 @@ export default function GalleryPage() {
           afterImage:
             "/Gallery/root canal/after-photo-of-a-root-canal-of-lower-teeth.webp",
           points: [
-            "Missing tooth replacement",
-            "Natural-looking restoration",
-            "Improved smile confidence",
+            "Infection control",
+            "Natural tooth preservation",
+            "Improved function",
           ],
         },
       ],
@@ -506,6 +521,39 @@ export default function GalleryPage() {
     },
   ];
 
+  const helpfulBlogs = [
+    {
+      title: "Braces Cost in Ahmedabad (2026)",
+      href: "/blog/braces-cost-ahmedabad-2026",
+      description:
+        "Read about braces types, cost factors, and orthodontic treatment planning in Ahmedabad.",
+    },
+    {
+      title: "Invisalign Cost in Ahmedabad",
+      href: "/blog/invisalign-cost-ahmedabad",
+      description:
+        "Understand aligner pricing, treatment planning, and what affects Invisalign cost.",
+    },
+    {
+      title: "Dental Implants in Ahmedabad – Cost, Procedure & Benefits",
+      href: "/blog/dental-implants-ahmedabad-guide",
+      description:
+        "Explore implant treatment planning, healing, and restorative outcomes for missing teeth.",
+    },
+    {
+      title: "Dental Veneers in Ahmedabad – Cost, Benefits & Smile Makeover Guide",
+      href: "/blog/dental-veneers-ahmedabad-guide",
+      description:
+        "Learn more about veneer-based smile transformations and cosmetic smile design.",
+    },
+    {
+      title: "Root Canal Treatment in Ahmedabad – Procedure, Pain & Cost",
+      href: "/blog/root-canal-treatment-ahmedabad-guide",
+      description:
+        "Understand how root canal treatment helps preserve natural teeth and restore comfort.",
+    },
+  ];
+
   const [activeCategory, setActiveCategory] = useState(galleryCategories[0].id);
 
   const currentCategory = useMemo(
@@ -514,6 +562,118 @@ export default function GalleryPage() {
       galleryCategories[0],
     [activeCategory]
   );
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What treatments are shown in the smile gallery?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The gallery includes braces cases, clear aligner cases, dental implant cases, smile transformation cases, and root canal treatment cases.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are these real before and after dental cases?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. The gallery is designed to showcase real before-and-after dental treatment journeys and treatment outcomes from different clinical categories.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I book a consultation after viewing the gallery?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. You can schedule a consultation after viewing the smile gallery to understand which treatment options may be suitable for your smile goals and dental concerns.",
+        },
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_BASE}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Smile Gallery",
+        item: CANONICAL_URL,
+      },
+    ],
+  };
+
+  const galleryPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": CANONICAL_URL,
+    url: CANONICAL_URL,
+    name: `Smile Gallery in Ahmedabad | Before and After Dental Cases | ${CLINIC_NAME}`,
+    description:
+      "Explore the smile gallery of Sumukh Dental Clinic in Ahmedabad with before-and-after orthodontic, implant, smile makeover, and root canal cases, plus a clinic tour.",
+    inLanguage: "en-IN",
+    isPartOf: { "@type": "WebSite", url: SITE_BASE, name: CLINIC_NAME },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2"],
+    },
+    author: {
+      "@type": "Physician",
+      name: DOCTOR_NAME,
+      medicalSpecialty: "Orthodontics",
+    },
+    dateModified: new Date().toISOString().split("T")[0],
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": ["Dentist", "MedicalBusiness"],
+    "@id": `${SITE_BASE}/#clinic`,
+    name: CLINIC_NAME,
+    url: SITE_BASE,
+    logo: `${SITE_BASE}/logo.webp`,
+    image: OG_IMAGE,
+    telephone: PHONE,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: ADDRESS_STREET,
+      addressLocality: ADDRESS_CITY,
+      addressRegion: ADDRESS_STATE,
+      postalCode: ADDRESS_PINCODE,
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "23.0597",
+      longitude: "72.5344",
+    },
+    areaServed: [
+      { "@type": "City", name: "Ahmedabad" },
+      { "@type": "Neighborhood", name: "Sola" },
+      { "@type": "Neighborhood", name: "Science City" },
+    ],
+    sameAs: [
+      "https://www.instagram.com/sumukhdentalclinic/",
+      "https://www.facebook.com/profile.php?id=61572468867668",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "167",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
 
   const trackGalleryClick = (
     action: "view-cases" | "book-consultation" | "view-category" | "clinic-tour"
@@ -529,7 +689,7 @@ export default function GalleryPage() {
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", "ViewContent", {
         content_name: `Gallery Page - ${action}`,
-        clinic_name: "Sumukh Dental Clinic",
+        clinic_name: CLINIC_NAME,
       });
     }
   };
@@ -564,14 +724,70 @@ export default function GalleryPage() {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>
-          Smile Gallery in Ahmedabad | Before and After Dental Cases | Sumukh Dental Clinic
+          Smile Gallery in Ahmedabad | Before and After Dental Cases |{" "}
+          {CLINIC_NAME}
         </title>
         <meta
           name="description"
-          content="Explore the smile gallery of Sumukh Dental Clinic in Ahmedabad with before-and-after orthodontic, implant, and smile makeover cases, plus a clinic tour of reception, operatory, and treatment areas."
+          content="Explore the smile gallery of Sumukh Dental Clinic in Ahmedabad with before-and-after orthodontic, implant, aligner, smile makeover, and root canal cases, plus a clinic tour of reception, operatory, and treatment areas."
         />
-        <link rel="canonical" href="https://sumukhdentalclinic.com/gallery" />
+        <meta
+          name="keywords"
+          content="smile gallery Ahmedabad, before after braces Ahmedabad, Invisalign results Ahmedabad, dental implant cases Ahmedabad, smile makeover gallery Ahmedabad, root canal cases Ahmedabad, dental clinic gallery Ahmedabad"
+        />
+        <link rel="canonical" href={CANONICAL_URL} />
+
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta name="googlebot" content="index, follow" />
+
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat" />
+        <meta name="geo.position" content="23.0597;72.5344" />
+        <meta name="ICBM" content="23.0597, 72.5344" />
+
+        <meta httpEquiv="content-language" content="en-IN" />
+        <link rel="alternate" hrefLang="en-IN" href={CANONICAL_URL} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content={CLINIC_NAME} />
+        <meta
+          property="og:title"
+          content={`Smile Gallery in Ahmedabad | Before and After Dental Cases | ${CLINIC_NAME}`}
+        />
+        <meta
+          property="og:description"
+          content={`Explore orthodontic, aligner, implant, smile makeover, and root canal treatment results in the smile gallery at ${CLINIC_NAME}, Ahmedabad.`}
+        />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Before and after dental treatment photographs in Ahmedabad"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`Smile Gallery in Ahmedabad | ${CLINIC_NAME}`}
+        />
+        <meta
+          name="twitter:description"
+          content={`See before-and-after dental treatment cases from braces, aligners, implants, root canal treatment, and smile makeover journeys.`}
+        />
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(galleryPageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
       <Navigation />
@@ -582,6 +798,40 @@ export default function GalleryPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
               <div>
+                <nav aria-label="Breadcrumb" className="mb-4">
+                  <ol
+                    className="flex items-center gap-1 text-sm text-slate-500"
+                    itemScope
+                    itemType="https://schema.org/BreadcrumbList"
+                  >
+                    <li
+                      itemProp="itemListElement"
+                      itemScope
+                      itemType="https://schema.org/ListItem"
+                    >
+                      <Link
+                        to="/"
+                        className="hover:text-blue-600 transition-colors"
+                        itemProp="item"
+                      >
+                        <span itemProp="name">Home</span>
+                      </Link>
+                      <meta itemProp="position" content="1" />
+                    </li>
+                    <li className="text-slate-400">/</li>
+                    <li
+                      itemProp="itemListElement"
+                      itemScope
+                      itemType="https://schema.org/ListItem"
+                    >
+                      <span className="text-blue-600 font-medium" itemProp="name">
+                        Smile Gallery
+                      </span>
+                      <meta itemProp="position" content="2" />
+                    </li>
+                  </ol>
+                </nav>
+
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5 shadow-sm">
                   <Camera size={16} />
                   Smile Gallery
@@ -593,10 +843,39 @@ export default function GalleryPage() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  Explore premium before-and-after dental cases
-                  that highlight orthodontic correction, implant
-                  rehabilitation, smile makeover results, root canal treatments,veneers and a closer look at
-                  our clinic environment through an engaging visual experience.
+                  Explore premium before-and-after dental cases that highlight
+                  orthodontic correction, aligner treatment, implant
+                  rehabilitation, smile makeover results, root canal treatments,
+                  and a closer look at our clinic environment through an engaging
+                  visual experience. You can also read more about{" "}
+                  <Link
+                    to="/blog/braces-cost-ahmedabad-2026"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    braces treatment
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/blog/invisalign-cost-ahmedabad"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    Invisalign
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/blog/dental-implants-ahmedabad-guide"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental implants
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    to="/blog/dental-veneers-ahmedabad-guide"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    smile transformation options
+                  </Link>
+                  .
                 </p>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
@@ -712,6 +991,45 @@ export default function GalleryPage() {
           </div>
         </section>
 
+        {/* BLOG LINKS */}
+        <section className="py-16 md:py-20 bg-white" aria-labelledby="blog-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <h2
+                id="blog-heading"
+                className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
+              >
+                Helpful Treatment Guides Behind These Results
+              </h2>
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                See the case results in the gallery, then read the treatment guides
+                to understand how braces, aligners, implants, veneers, and root
+                canal procedures are planned.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
+              {helpfulBlogs.map((blog, index) => (
+                <Link
+                  key={index}
+                  to={blog.href}
+                  className="rounded-3xl border border-blue-100/80 bg-gradient-to-br from-white to-blue-50/40 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
+                >
+                  <h3 className="text-lg font-bold text-blue-900 mb-3">
+                    {blog.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                    {blog.description}
+                  </p>
+                  <span className="text-blue-600 font-semibold text-sm">
+                    Read article →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CATEGORY BLOCKS */}
         <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -765,8 +1083,8 @@ export default function GalleryPage() {
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 Browse multiple treatment categories and showcase real clinical
-                smile transformations from orthodontics, implants, and cosmetic
-                dentistry.
+                smile transformations from orthodontics, aligners, implants, root
+                canal treatment, and cosmetic dentistry.
               </p>
             </div>
 
@@ -826,8 +1144,7 @@ export default function GalleryPage() {
                         {item.title}
                       </h3>
                       <p className="text-slate-600">
-                        {item.treatment} <br />
-                        • {item.duration}
+                        {item.treatment} <br />• {item.duration}
                       </p>
                     </div>
 
@@ -844,8 +1161,80 @@ export default function GalleryPage() {
                       title={item.title}
                     />
                   </div>
+
+                  {item.points?.length > 0 && (
+                    <div className="grid sm:grid-cols-1 gap-3">
+                      {item.points.map((point, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="bg-blue-500 rounded-full p-1 mt-1 shadow-sm shrink-0">
+                            <Check className="text-white" size={12} />
+                          </div>
+                          <span className="text-slate-700 text-sm">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MAP */}
+        <section
+          className="py-16 md:py-20 bg-white"
+          aria-labelledby="map-heading"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2
+                id="map-heading"
+                className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
+              >
+                Visit Our Clinic in Ahmedabad
+              </h2>
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                View real treatment journeys online, then visit our clinic in
+                Sola, Science City, Ahmedabad for consultation and personalised
+                treatment planning.
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] overflow-hidden border border-blue-100 shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14683.187201738714!2d72.50903039999999!3d23.0679101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x395e9cb17a22743d%3A0xf474b73ad1ac69d5!2sSUMUKH%20DENTAL%20CLINIC%20ORTHODONTIC%20AND%20IMPLANT%20CENTRE%2C%20GF-20%2C%20Sudarshan%20Gold%2C%20Divine%20Rd%2C%20opp.%20Hyundai%20service%20centre%2C%20nr.%20Auda%20water%20tank%2C%20Science%20City%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060!3m2!1d23.0708467!2d72.5140505!4m5!1s0x395e9cb17a22743d%3A0xf474b73ad1ac69d5!2sSUMUKH%20DENTAL%20CLINIC%20ORTHODONTIC%20AND%20IMPLANT%20CENTRE%2C%20GF-20%2C%20Sudarshan%20Gold%2C%20Divine%20Rd%2C%20opp.%20Hyundai%20service%20centre%2C%20nr.%20Auda%20water%20tank%2C%20Science%20City%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060!3m2!1d23.0708467!2d72.5140505!5e0!3m2!1sen!2sin!4v1774967743418!5m2!1sen!2sin"
+                width="100%"
+                height="420"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sumukh Dental Clinic Ahmedabad Location"
+              />
+            </div>
+
+            <div className="text-center mt-8">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Sumukh+Dental+Clinic+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
+              >
+                <MapPin size={18} />
+                Get Directions
+              </a>
+            </div>
+
+            <div className="mt-8 text-center text-sm text-slate-500">
+              <strong className="text-slate-700">{CLINIC_NAME}</strong> ·{" "}
+              {ADDRESS_STREET}, {ADDRESS_CITY} – {ADDRESS_PINCODE} ·{" "}
+              <a
+                href={`tel:${PHONE}`}
+                className="text-blue-600 hover:underline inline-flex items-center gap-1"
+              >
+                <Phone size={13} />
+                {PHONE}
+              </a>
             </div>
           </div>
         </section>
@@ -895,7 +1284,9 @@ export default function GalleryPage() {
         ]}
       />
 
-      <AppointmentForm />
+      <section id="appointment">
+        <AppointmentForm />
+      </section>
       <Footer />
       <FloatingContact />
       <SocialFollow />

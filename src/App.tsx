@@ -16,6 +16,8 @@ import PreventiveRestorativePage from "./pages/PreventiveRestorativePage";
 import PatientIntakePage from "./pages/PatientIntakePage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminFormsPage from "./pages/AdminFormsPage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
 
 function ScrollToTop() {
@@ -49,6 +51,11 @@ export default function App() {
           path="/preventive-restorative"
           element={<PreventiveRestorativePage />}
         />
+
+        {/* Blog Routes */}
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+
         <Route path="/patient-intake" element={<PatientIntakePage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route

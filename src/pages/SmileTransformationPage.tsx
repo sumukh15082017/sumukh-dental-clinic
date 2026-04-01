@@ -8,6 +8,9 @@ import {
   Wand2,
   HeartHandshake,
   Camera,
+  MapPin,
+  Star,
+  Phone,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -24,6 +27,19 @@ declare global {
     fbq?: (...args: any[]) => void;
   }
 }
+
+const CLINIC_NAME = "Sumukh Dental Clinic";
+const DOCTOR_NAME = "Dr. Dipen Thakker";
+const DOCTOR_DEGREE = "MDS Orthodontist";
+const PHONE = "+91-8799527524";
+const ADDRESS_STREET =
+  "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola";
+const ADDRESS_CITY = "Ahmedabad";
+const ADDRESS_STATE = "Gujarat";
+const ADDRESS_PINCODE = "380060";
+const SITE_BASE = "https://www.sumukhdentalclinic.com";
+const CANONICAL_URL = `${SITE_BASE}/smile-makeover`;
+const OG_IMAGE = `${SITE_BASE}/smile-transformation-in-ahmedabad.webp`;
 
 export default function SmileTransformationPage() {
   const treatmentOptions = [
@@ -65,6 +81,33 @@ export default function SmileTransformationPage() {
         "Great for mild smile concerns",
         "Aesthetic and balanced results",
       ],
+    },
+  ];
+
+  const helpfulBlogs = [
+    {
+      title: "Dental Veneers in Ahmedabad",
+      href: "/blog/dental-veneers-ahmedabad-guide",
+      description:
+        "Useful when smile transformation involves correcting shape, colour, proportions, or minor smile irregularities.",
+    },
+    {
+      title: "Clear Aligners in Ahmedabad",
+      href: "/blog/clear-aligners-ahmedabad-guide",
+      description:
+        "Helpful for understanding how alignment can improve smile design before veneers, bonding, or other aesthetic treatment.",
+    },
+    {
+      title: "Crowns and Bridges in Ahmedabad",
+      href: "/blog/crowns-and-bridges-ahmedabad-guide",
+      description:
+        "Important when smile makeover treatment needs both aesthetics and functional restoration for damaged teeth.",
+    },
+    {
+      title: "Dental Implants in Ahmedabad",
+      href: "/blog/dental-implants-ahmedabad-guide",
+      description:
+        "Useful for smile transformation cases involving missing teeth, smile balance, and full-mouth rehabilitation.",
     },
   ];
 
@@ -127,6 +170,134 @@ export default function SmileTransformationPage() {
     },
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_BASE}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Smile Makeover",
+        item: CANONICAL_URL,
+      },
+    ],
+  };
+
+  const dentistSchema = {
+    "@context": "https://schema.org",
+    "@type": ["Dentist", "MedicalBusiness"],
+    "@id": `${SITE_BASE}/#clinic`,
+    name: CLINIC_NAME,
+    url: SITE_BASE,
+    logo: `${SITE_BASE}/logo.webp`,
+    image: OG_IMAGE,
+    telephone: PHONE,
+    priceRange: "₹₹",
+    currenciesAccepted: "INR",
+    paymentAccepted: "Cash, Card, UPI",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: ADDRESS_STREET,
+      addressLocality: ADDRESS_CITY,
+      addressRegion: ADDRESS_STATE,
+      postalCode: ADDRESS_PINCODE,
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "23.0597",
+      longitude: "72.5344",
+    },
+    areaServed: [
+      { "@type": "City", name: "Ahmedabad" },
+      { "@type": "Neighborhood", name: "Sola" },
+      { "@type": "Neighborhood", name: "Science City" },
+      { "@type": "Neighborhood", name: "Thaltej" },
+      { "@type": "Neighborhood", name: "Bodakdev" },
+      { "@type": "Neighborhood", name: "Gota" },
+    ],
+    medicalSpecialty: ["Cosmetic Dentistry", "Dentistry", "Orthodontics"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "10:00",
+        closes: "20:00",
+      },
+    ],
+    sameAs: [
+      "https://www.instagram.com/sumukhdentalclinic/",
+      "https://www.facebook.com/profile.php?id=61572468867668",
+    ],
+    employee: {
+      "@type": "Physician",
+      name: DOCTOR_NAME,
+      jobTitle: DOCTOR_DEGREE,
+      medicalSpecialty: "Dentistry",
+      worksFor: { "@type": "MedicalBusiness", name: CLINIC_NAME },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "167",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": CANONICAL_URL,
+    url: CANONICAL_URL,
+    name: `Smile Makeover in Ahmedabad | Smile Transformation | ${CLINIC_NAME}`,
+    description:
+      "Get a smile makeover in Ahmedabad at Sumukh Dental Clinic. Improve smile symmetry, tooth shape, color, and overall aesthetics with a personalized smile transformation plan.",
+    inLanguage: "en-IN",
+    isPartOf: { "@type": "WebSite", url: SITE_BASE, name: CLINIC_NAME },
+    about: {
+      "@type": "MedicalProcedure",
+      name: "Smile Makeover",
+      procedureType: "https://schema.org/TherapeuticProcedure",
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2"],
+    },
+    author: {
+      "@type": "Physician",
+      name: DOCTOR_NAME,
+      medicalSpecialty: "Dentistry",
+    },
+    dateModified: new Date().toISOString().split("T")[0],
+  };
+
   const trackSmileClick = (
     action: "book-smile-consultation" | "explore-smile-options"
   ) => {
@@ -141,7 +312,7 @@ export default function SmileTransformationPage() {
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", "Lead", {
         content_name: `Smile Transformation Page - ${action}`,
-        clinic_name: "Sumukh Dental Clinic",
+        clinic_name: CLINIC_NAME,
       });
     }
   };
@@ -168,17 +339,68 @@ export default function SmileTransformationPage() {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>
-          Smile Makeover in Ahmedabad | Smile Transformation | Sumukh Dental Clinic
+          Smile Makeover in Ahmedabad | Smile Transformation | {CLINIC_NAME}
         </title>
         <meta
           name="description"
           content="Get a smile makeover in Ahmedabad at Sumukh Dental Clinic. Improve smile symmetry, tooth shape, color, and overall aesthetics with a personalized smile transformation plan."
         />
-        <link
-          rel="canonical"
-          href="https://sumukhdentalclinic.com/smile-makeover"
+        <meta
+          name="keywords"
+          content="smile makeover Ahmedabad, smile transformation Ahmedabad, cosmetic dentistry Ahmedabad, smile design Ahmedabad, veneers Ahmedabad, aesthetic dentist Ahmedabad, smile enhancement Ahmedabad, full smile makeover Ahmedabad"
         />
+        <link rel="canonical" href={CANONICAL_URL} />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat" />
+        <meta name="geo.position" content="23.0597;72.5344" />
+        <meta name="ICBM" content="23.0597, 72.5344" />
+        <meta httpEquiv="content-language" content="en-IN" />
+        <link rel="alternate" hrefLang="en-IN" href={CANONICAL_URL} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content={CLINIC_NAME} />
+        <meta
+          property="og:title"
+          content={`Smile Makeover in Ahmedabad | Smile Transformation | ${CLINIC_NAME}`}
+        />
+        <meta
+          property="og:description"
+          content="Improve smile symmetry, tooth shape, color, and aesthetics with a personalized smile makeover plan at Sumukh Dental Clinic, Ahmedabad."
+        />
+        <meta property="og:url" content={CANONICAL_URL} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Smile makeover and aesthetic smile transformation in Ahmedabad"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`Smile Makeover in Ahmedabad | Smile Transformation | ${CLINIC_NAME}`}
+        />
+        <meta
+          name="twitter:description"
+          content="Personalized smile makeover and aesthetic smile transformation in Ahmedabad at Sumukh Dental Clinic."
+        />
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        <script type="application/ld+json">{JSON.stringify(dentistSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 
       <Navigation />
@@ -189,9 +411,43 @@ export default function SmileTransformationPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
               <div>
+                <nav aria-label="Breadcrumb" className="mb-4">
+                  <ol
+                    className="flex items-center gap-1 text-sm text-slate-500"
+                    itemScope
+                    itemType="https://schema.org/BreadcrumbList"
+                  >
+                    <li
+                      itemProp="itemListElement"
+                      itemScope
+                      itemType="https://schema.org/ListItem"
+                    >
+                      <Link
+                        to="/"
+                        className="hover:text-blue-600 transition-colors"
+                        itemProp="item"
+                      >
+                        <span itemProp="name">Home</span>
+                      </Link>
+                      <meta itemProp="position" content="1" />
+                    </li>
+                    <li className="text-slate-400">/</li>
+                    <li
+                      itemProp="itemListElement"
+                      itemScope
+                      itemType="https://schema.org/ListItem"
+                    >
+                      <span className="text-blue-600 font-medium" itemProp="name">
+                        Smile Makeover
+                      </span>
+                      <meta itemProp="position" content="2" />
+                    </li>
+                  </ol>
+                </nav>
+
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5">
                   <Sparkles size={16} />
-                  Smile Transformation
+                  Smile Transformation in Ahmedabad
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-900 leading-tight mb-6">
@@ -200,11 +456,52 @@ export default function SmileTransformationPage() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-                  A smile makeover is a personalized journey designed
-                  to improve the beauty, harmony, and confidence of your smile.
-                  By combining <Link to="/veneers" className="text-blue-600 font-semibold hover:underline">veneers</Link>,<Link to="/crowns" className="text-blue-600 font-semibold hover:underline"> dental crown</Link>, <Link to="/implants" className="text-blue-600 font-semibold hover:underline">dental implants</Link> and <Link to="/aligners" className="text-blue-600 font-semibold hover:underline">clear aligners</Link>, we create results that look
-                  refined, balanced, and natural.
+                  A smile makeover is a personalized journey designed to improve
+                  the beauty, harmony, and confidence of your smile. By combining{" "}
+                  <Link
+                    to="/veneers"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    veneers
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/crowns"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental crowns
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/implants"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental implants
+                  </Link>
+                  , and{" "}
+                  <Link
+                    to="/aligners"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    clear aligners
+                  </Link>
+                  , we create results that look refined, balanced, and natural.
                 </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <Star
+                      size={16}
+                      className="text-yellow-500 fill-yellow-400"
+                      aria-hidden="true"
+                    />
+                    <span>167+ Google Reviews</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <MapPin size={16} className="text-blue-600" aria-hidden="true" />
+                    <span>Sola · Science City · Ahmedabad</span>
+                  </div>
+                </div>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
                   <button
@@ -269,7 +566,36 @@ export default function SmileTransformationPage() {
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                   Smile transformation is a customized dental approach focused on
                   improving the overall appearance of your smile. It may involve a
-                  single treatment or a carefully planned combination of procedures such as <Link to="/veneers" className="text-blue-600 font-semibold hover:underline">veneers</Link>,<Link to="/crowns" className="text-blue-600 font-semibold hover:underline"> dental crown</Link>, <Link to="/implants" className="text-blue-600 font-semibold hover:underline">dental implants</Link> and <Link to="/aligners" className="text-blue-600 font-semibold hover:underline">clear aligners</Link>.
+                  single treatment or a carefully planned combination of procedures
+                  such as{" "}
+                  <Link
+                    to="/veneers"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    veneers
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/crowns"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental crowns
+                  </Link>
+                  ,{" "}
+                  <Link
+                    to="/implants"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    dental implants
+                  </Link>
+                  , and{" "}
+                  <Link
+                    to="/aligners"
+                    className="text-blue-600 font-semibold hover:underline"
+                  >
+                    clear aligners
+                  </Link>
+                  .
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   The goal is not only to enhance teeth, but to create a smile that
@@ -278,7 +604,9 @@ export default function SmileTransformationPage() {
               </div>
 
               <div className={premiumCard}>
-                <h3 className="text-2xl font-bold text-blue-900 mb-5">Key Benefits</h3>
+                <h3 className="text-2xl font-bold text-blue-900 mb-5">
+                  Key Benefits
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -290,6 +618,45 @@ export default function SmileTransformationPage() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HELPFUL BLOGS */}
+        <section
+          className="py-16 md:py-20 bg-white"
+          aria-labelledby="blogs-heading"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <h2
+                id="blogs-heading"
+                className="text-4xl md:text-5xl font-bold text-blue-900 mb-4"
+              >
+                Helpful Guides Before a Smile Makeover
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                These articles explain the individual treatments that are often
+                combined during smile transformation planning.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {helpfulBlogs.map((blog, index) => (
+                <Link
+                  key={index}
+                  to={blog.href}
+                  className="rounded-3xl border border-blue-100/80 bg-gradient-to-br from-white to-blue-50/40 p-7 shadow-[0_12px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)]"
+                >
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">
+                    {blog.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    {blog.description}
+                  </p>
+                  <span className="text-blue-600 font-semibold">Read article →</span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -312,7 +679,9 @@ export default function SmileTransformationPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Smile className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Smile Harmony</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Smile Harmony
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Improves the balance between teeth, gums, lips, and facial aesthetics.
                 </p>
@@ -322,7 +691,9 @@ export default function SmileTransformationPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Camera className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Aesthetic Refinement</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Aesthetic Refinement
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Enhances color, symmetry, proportions, and overall smile appearance.
                 </p>
@@ -332,7 +703,9 @@ export default function SmileTransformationPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <ShieldCheck className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Customized Planning</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Customized Planning
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Each smile transformation plan is designed specifically for your facial features and goals.
                 </p>
@@ -342,7 +715,9 @@ export default function SmileTransformationPage() {
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-5">
                   <Clock className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Long-Term Value</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">
+                  Long-Term Value
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Thoughtful treatment planning creates results that are both aesthetic and functionally meaningful.
                 </p>
@@ -370,7 +745,9 @@ export default function SmileTransformationPage() {
                   <div className="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                     <type.icon className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{type.title}</h3>
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">
+                    {type.title}
+                  </h3>
                   <p className="text-gray-600 mb-6">{type.description}</p>
                   <ul className="space-y-3">
                     {type.features.map((feature, idx) => (
@@ -439,6 +816,18 @@ export default function SmileTransformationPage() {
                   </p>
                 </div>
               </div>
+
+              <address className="not-italic mt-8 text-center text-sm text-slate-500">
+                <strong className="text-slate-700">{CLINIC_NAME}</strong> ·{" "}
+                {ADDRESS_STREET}, {ADDRESS_CITY} – {ADDRESS_PINCODE} ·{" "}
+                <a
+                  href={`tel:${PHONE}`}
+                  className="text-blue-600 hover:underline inline-flex items-center gap-1"
+                >
+                  <Phone size={13} aria-hidden="true" />
+                  {PHONE}
+                </a>
+              </address>
             </div>
           </div>
         </section>
@@ -463,8 +852,12 @@ export default function SmileTransformationPage() {
                     <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold mb-4">
                       {item.step}
                     </div>
-                    <h3 className="text-xl font-bold text-blue-900 mb-3">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold text-blue-900 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
                   {index < process.length - 1 && (
                     <div className="hidden md:block absolute top-10 -right-3 text-blue-300 text-4xl">
@@ -473,6 +866,52 @@ export default function SmileTransformationPage() {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MAP */}
+        <section
+          className="py-16 md:py-20 bg-white"
+          aria-labelledby="map-heading"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2
+                id="map-heading"
+                className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
+              >
+                Visit Our Smile Makeover Clinic in Ahmedabad
+              </h2>
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                Conveniently located in Sola, Science City, Ahmedabad for smile design,
+                veneers, aligners, crowns, implants, and complete smile transformation care.
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] overflow-hidden border border-blue-100 shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14683.187201738714!2d72.50903039999999!3d23.0679101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x395e9cb17a22743d%3A0xf474b73ad1ac69d5!2sSUMUKH%20DENTAL%20CLINIC%20ORTHODONTIC%20AND%20IMPLANT%20CENTRE%2C%20GF-20%2C%20Sudarshan%20Gold%2C%20Divine%20Rd%2C%20opp.%20Hyundai%20service%20centre%2C%20nr.%20Auda%20water%20tank%2C%20Science%20City%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060!3m2!1d23.0708467!2d72.5140505!4m5!1s0x395e9cb17a22743d%3A0xf474b73ad1ac69d5!2sSUMUKH%20DENTAL%20CLINIC%20ORTHODONTIC%20AND%20IMPLANT%20CENTRE%2C%20GF-20%2C%20Sudarshan%20Gold%2C%20Divine%20Rd%2C%20opp.%20Hyundai%20service%20centre%2C%20nr.%20Auda%20water%20tank%2C%20Science%20City%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060!3m2!1d23.0708467!2d72.5140505!5e0!3m2!1sen!2sin!4v1774967743418!5m2!1sen!2sin"
+                width="100%"
+                height="420"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sumukh Dental Clinic Ahmedabad Location"
+              />
+            </div>
+
+            <div className="text-center mt-8">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Sumukh+Dental+Clinic+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
+              >
+                <MapPin size={18} aria-hidden="true" />
+                Get Directions
+              </a>
             </div>
           </div>
         </section>
@@ -512,10 +951,22 @@ export default function SmileTransformationPage() {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+                  className="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50/30 p-6 shadow-sm"
+                  itemScope
+                  itemType="https://schema.org/Question"
                 >
-                  <h3 className="text-xl font-bold text-blue-900 mb-3">{faq.q}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3" itemProp="name">
+                    {faq.q}
+                  </h3>
+                  <div
+                    itemScope
+                    itemType="https://schema.org/Answer"
+                    itemProp="acceptedAnswer"
+                  >
+                    <p className="text-gray-600 leading-relaxed" itemProp="text">
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -527,7 +978,7 @@ export default function SmileTransformationPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 md:p-12 shadow-lg text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Let’s Create Your Best Smile
+                Let&apos;s Create Your Best Smile
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                 Whether your goal is subtle refinement or a complete aesthetic upgrade,
@@ -545,26 +996,33 @@ export default function SmileTransformationPage() {
           </div>
         </section>
       </main>
-<RelatedTreatments
-  links={[
-    {
-      title: "Veneers",
-      href: "/veneers",
-      description: "Veneers may refine tooth shape, color, and symmetry as part of an aesthetic smile plan.",
-    },
-    {
-      title: "Clear Aligners",
-      href: "/aligners",
-      description: "Aligners can improve alignment discreetly and may form part of a smile makeover sequence.",
-    },
-    {
-      title: "Dental Implants",
-      href: "/implants",
-      description: "Implants may be included when missing teeth affect smile balance, function, or overall aesthetics.",
-    },
-  ]}
-/>
-      <AppointmentForm />
+
+      <RelatedTreatments
+        links={[
+          {
+            title: "Veneers",
+            href: "/veneers",
+            description:
+              "Veneers may refine tooth shape, color, and symmetry as part of an aesthetic smile plan.",
+          },
+          {
+            title: "Clear Aligners",
+            href: "/aligners",
+            description:
+              "Aligners can improve alignment discreetly and may form part of a smile makeover sequence.",
+          },
+          {
+            title: "Dental Implants",
+            href: "/implants",
+            description:
+              "Implants may be included when missing teeth affect smile balance, function, or overall aesthetics.",
+          },
+        ]}
+      />
+
+      <section id="appointment">
+        <AppointmentForm />
+      </section>
       <Footer />
       <FloatingContact />
       <SocialFollow />
