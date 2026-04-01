@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- MAIN PAGES -->
   <url>
     <loc>https://www.sumukhdentalclinic.com/</loc>
     <priority>1.0</priority>
@@ -12,18 +13,23 @@
   </url>
 
   <url>
+    <loc>https://www.sumukhdentalclinic.com/aligners</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://www.sumukhdentalclinic.com/implants</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/dental-tourism</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.sumukhdentalclinic.com/root-canal</loc>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.sumukhdentalclinic.com/aligners</loc>
-    <priority>0.9</priority>
   </url>
 
   <url>
@@ -42,8 +48,13 @@
   </url>
 
   <url>
-    <loc>https://www.sumukhdentalclinic.com/dental-tourism</loc>
-    <priority>0.9</priority>
+    <loc>https://www.sumukhdentalclinic.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/preventive-restorative</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -51,14 +62,86 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- BLOG MAIN PAGE -->
   <url>
-    <loc>https://www.sumukhdentalclinic.com/contact</loc>
+    <loc>https://www.sumukhdentalclinic.com/blog</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- BLOG POSTS -->
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/braces-cost-ahmedabad-2026</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.sumukhdentalclinic.com/preventive-restorative</loc>
-    <priority>0.7</priority>
+    <loc>https://www.sumukhdentalclinic.com/blog/invisalign-cost-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/braces-vs-invisalign-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/how-long-does-invisalign-take-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/best-age-for-braces-treatment-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/adult-braces-or-invisalign-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/do-clear-aligners-hurt-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/ceramic-braces-vs-metal-braces-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/what-problems-can-invisalign-correct-ahmedabad</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/best-orthodontist-in-ahmedabad-guide</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/dental-implants-ahmedabad-guide</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/root-canal-treatment-ahmedabad-guide</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/dental-veneers-ahmedabad-guide</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/crowns-and-bridges-ahmedabad-guide</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sumukhdentalclinic.com/blog/dental-tourism-ahmedabad-guide</loc>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
