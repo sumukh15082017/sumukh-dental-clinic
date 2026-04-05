@@ -531,12 +531,12 @@ export default function AlignersPage() {
 
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5 shadow-sm">
                   <Sparkles size={16} aria-hidden="true" />
-                  Clear Aligners & Invisalign in Ahmedabad
+                  Invisalign & Clear Aligners in Ahmedabad
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
-                  Invisalign & Clear Aligners in Ahmedabad — Invisible Teeth Straightening
-                  <span className="text-blue-500"> Invisible Aligners Treatment</span>
+                  Invisalign Aligners in Ahmedabad 
+                  <span className="text-blue-500"> Invisible teeth straightening</span>
                 </h1>
 
                 <p className="speakable text-xl md:text-2xl text-blue-600 font-semibold mb-4">
