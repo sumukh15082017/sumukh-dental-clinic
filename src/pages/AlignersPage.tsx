@@ -535,7 +535,7 @@ export default function AlignersPage() {
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
-                  Invisalign Aligners in Ahmedabad 
+                  Invisalign Aligners in Ahmedabad —
                   <span className="text-blue-500"> Invisible teeth straightening</span>
                 </h1>
 
