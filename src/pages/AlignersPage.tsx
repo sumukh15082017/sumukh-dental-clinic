@@ -43,7 +43,7 @@ const ADDRESS_STATE = "Gujarat";
 const ADDRESS_PINCODE = "380060";
 const CANONICAL_URL = "https://www.sumukhdentalclinic.com/aligners";
 const SITE_BASE = "https://www.sumukhdentalclinic.com";
-const OG_IMAGE = `${SITE_BASE}/braces/invisble-aligners-in-ahmedabad.webp`;
+const OG_IMAGE = `${SITE_BASE}/braces/invisible-aligners-in-ahmedabad.webp`;
 
 export default function AlignersPage() {
   // ─── Data ────────────────────────────────────────────────────────────────
@@ -114,7 +114,7 @@ export default function AlignersPage() {
       slug: "invisalign-ahmedabad",
       description:
         "Invisalign in Ahmedabad uses a globally recognised clear aligner system with advanced digital planning for precise, comfortable, and aesthetically superior smile correction. As certified Invisalign providers, we offer the full Invisalign range including Invisalign Lite and Invisalign Teen.",
-      image: "/braces/invisble-aligners-in-ahmedabad.webp",
+      image: "/braces/invisible-aligners-in-ahmedabad.webp",
       alt: "Invisalign treatment in Ahmedabad at Sumukh Dental Clinic, Sola Science City",
       features: [
         "Virtually invisible appearance during treatment",
@@ -130,7 +130,7 @@ export default function AlignersPage() {
       slug: "clear-aligners-adults-ahmedabad",
       description:
         "Clear aligner treatment for adults in Ahmedabad who want to straighten teeth discreetly without the appearance of traditional braces. Ideal for working professionals who want effective orthodontic correction with a minimal visible footprint.",
-      image: "/braces/invisble-aligners-in-ahmedabad.webp",
+      image: "/braces/invisible-aligners-in-ahmedabad.webp",
       alt: "Clear aligners for adults in Ahmedabad — Sumukh Dental Clinic",
       features: [
         "Discreet professional appearance throughout treatment",
@@ -146,7 +146,7 @@ export default function AlignersPage() {
       slug: "clear-aligners-teens-ahmedabad",
       description:
         "A modern, convenient orthodontic solution for teens in Ahmedabad who prefer a more aesthetic and removable alternative to metal braces. Helps maintain confidence during the school years while effectively correcting teeth alignment.",
-      image: "/braces/invisble-aligners-in-ahmedabad.webp",
+      image: "/braces/invisible-aligners-in-ahmedabad.webp",
       alt: "Teen clear aligners treatment in Ahmedabad — Sumukh Dental Clinic",
       features: [
         "More aesthetic option for teens during treatment",
@@ -535,12 +535,12 @@ export default function AlignersPage() {
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
-                  Clear Aligners &amp; Invisalign in Ahmedabad
-                  <span className="text-blue-500"> Invisible Braces Treatment</span>
+                  Invisalign & Clear Aligners in Ahmedabad — Invisible Teeth Straightening
+                  <span className="text-blue-500"> Invisible Aligners Treatment</span>
                 </h1>
 
                 <p className="speakable text-xl md:text-2xl text-blue-600 font-semibold mb-4">
-                  Expert Invisalign Treatment by {DOCTOR_NAME}, {DOCTOR_DEGREE}
+                  Expert Invisalign Treatment in Ahmedabad by {DOCTOR_NAME}, {DOCTOR_DEGREE}
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
@@ -653,7 +653,7 @@ export default function AlignersPage() {
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
                     <div className="w-full h-[360px] sm:h-[460px] md:h-[620px] rounded-[1.5rem] overflow-hidden">
                       <img
-                        src="/braces/invisble-aligners-in-ahmedabad.webp"
+                        src="/braces/invisible-aligners-in-ahmedabad.webp"
                         alt={`Clear aligners and Invisalign treatment by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
                         loading="eager"
                         fetchPriority="high"
