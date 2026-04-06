@@ -99,7 +99,7 @@ export default function OrthodonticsPage() {
       slug: "clear-aligners",
       description:
         "Clear aligners in Ahmedabad are a virtually invisible, removable alternative to braces. A series of custom-made transparent trays gradually shift teeth into position — without any metal brackets or wires. Ideal for adults and teens seeking a discreet orthodontic solution.",
-      image: "/braces/invisble-aligners-in-ahmedabad.webp",
+      image: "/braces/invisible-aligners-in-ahmedabad.webp",
       alt: "Clear aligners treatment in Ahmedabad for invisible teeth straightening — Sumukh Dental Clinic",
       features: [
         "Completely removable for eating and cleaning",
