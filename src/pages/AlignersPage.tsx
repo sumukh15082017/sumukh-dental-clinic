@@ -159,8 +159,6 @@ export default function AlignersPage() {
     },
   ];
 
-
-
   const alignerBrands = [
     {
       title: "Invisalign",
@@ -181,6 +179,7 @@ export default function AlignersPage() {
       icon: Smile,
     },
   ];
+
   const helpfulBlogs = [
     {
       title: "Invisalign Cost in Ahmedabad",
@@ -264,7 +263,7 @@ export default function AlignersPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Clear Aligners & Invisalign",
+        name: "Invisalign & Clear Aligners",
         item: CANONICAL_URL,
       },
     ],
@@ -344,10 +343,10 @@ export default function AlignersPage() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
+      ratingValue: "5.0",
       reviewCount: "167",
       bestRating: "5",
-      worstRating: "1",
+      worstRating: "4",
     },
   };
 
@@ -356,9 +355,9 @@ export default function AlignersPage() {
     "@type": "MedicalWebPage",
     "@id": CANONICAL_URL,
     url: CANONICAL_URL,
-    name: `Clear Aligners & Invisalign in Ahmedabad | Invisible Braces Treatment | ${CLINIC_NAME}`,
+    name: `Invisalign & Clear Aligners in Ahmedabad | Invisible Braces | ${CLINIC_NAME}`,
     description:
-      "Expert clear aligner and Invisalign treatment in Ahmedabad by Dr. Dipen Thakker at Sumukh Dental Clinic, Sola. Digital iTero scanning, personalised planning, and discreet smile correction.",
+      "Expert Invisalign and clear aligner treatment in Ahmedabad by Dr. Dipen Thakker at Sumukh Dental Clinic, Sola. Digital iTero scanning, personalised planning, and discreet smile correction.",
     inLanguage: "en-IN",
     isPartOf: { "@type": "WebSite", url: SITE_BASE, name: CLINIC_NAME },
     about: {
@@ -416,16 +415,16 @@ export default function AlignersPage() {
       <Helmet>
         <html lang="en" />
         <title>
-          Clear Aligners &amp; Invisalign in Ahmedabad | Invisible Braces Treatment |{" "}
+          Invisalign &amp; Clear Aligners in Ahmedabad | Invisible Braces |{" "}
           {CLINIC_NAME}
         </title>
         <meta
           name="description"
-          content={`Looking for clear aligners or Invisalign in Ahmedabad? ${DOCTOR_NAME} (${DOCTOR_DEGREE}) at ${CLINIC_NAME} offers invisible braces, digital iTero smile planning, real case guidance, and personalised treatment in Sola, Science City.`}
+          content={`Looking for Invisalign near you or clear aligners in Ahmedabad? ${DOCTOR_NAME} (${DOCTOR_DEGREE}) at ${CLINIC_NAME} offers invisible braces, digital iTero smile planning, real case guidance, and personalised treatment in Sola, Science City.`}
         />
         <meta
           name="keywords"
-          content="clear aligners Ahmedabad, Invisalign Ahmedabad, invisible braces Ahmedabad, best clear aligners Ahmedabad, Invisalign cost Ahmedabad, teeth straightening Ahmedabad, clear aligner treatment Ahmedabad, orthodontist Ahmedabad, iTero scan Ahmedabad, clear aligners Sola Ahmedabad"
+          content="Invisalign Ahmedabad, Invisalign near me Ahmedabad, clear aligners Ahmedabad, aligners near me Ahmedabad, invisible braces Ahmedabad, Invisalign cost Ahmedabad, clear aligners cost Ahmedabad, teeth aligners Ahmedabad, clear aligner treatment Ahmedabad, iTero scan Ahmedabad"
         />
         <link rel="canonical" href={CANONICAL_URL} />
 
@@ -448,7 +447,7 @@ export default function AlignersPage() {
         <meta property="og:site_name" content={CLINIC_NAME} />
         <meta
           property="og:title"
-          content={`Clear Aligners & Invisalign in Ahmedabad | Invisible Braces Treatment | ${CLINIC_NAME}`}
+          content={`Invisalign & Clear Aligners in Ahmedabad | Invisible Braces | ${CLINIC_NAME}`}
         />
         <meta
           property="og:description"
@@ -466,7 +465,7 @@ export default function AlignersPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Clear Aligners & Invisalign in Ahmedabad | ${CLINIC_NAME}`}
+          content={`Invisalign & Clear Aligners in Ahmedabad | ${CLINIC_NAME}`}
         />
         <meta
           name="twitter:description"
@@ -534,29 +533,27 @@ export default function AlignersPage() {
                   Invisalign & Clear Aligners in Ahmedabad
                 </div>
 
+                <p className="text-sm md:text-base font-semibold uppercase tracking-wide text-blue-700 mb-3">
+                  Looking for Invisalign near you in Ahmedabad?
+                </p>
+
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
                   Invisalign Aligners in Ahmedabad —
-                  <span className="text-blue-500"> Invisible teeth straightening</span>
+                  <span className="text-blue-500"> Invisible Teeth Straightening</span>
                 </h1>
 
                 <p className="speakable text-xl md:text-2xl text-blue-600 font-semibold mb-4">
-                  Expert Invisalign Treatment in Ahmedabad by {DOCTOR_NAME}, {DOCTOR_DEGREE}
+                  Expert Invisalign treatment in Ahmedabad by {DOCTOR_NAME}, {DOCTOR_DEGREE}
+                </p>
+
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-5 max-w-2xl">
+                  If you are searching for Invisalign near you or clear aligners in                             Ahmedabad, {CLINIC_NAME}, Science city, provides advanced clear aligner                       treatment with digital iTero planning for aesthetic, comfortable, and                         removable teeth straightening.
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  Looking for clear aligners in Ahmedabad? At {CLINIC_NAME}, Sola,
-                  we provide advanced{" "}
-                  <Link
-                    to="/orthodontics"
-                    className="text-blue-600 font-semibold hover:underline"
-                  >
-                    orthodontic treatment
-                  </Link>{" "}
-                  using Invisalign and invisible braces for patients who want a more
-                  aesthetic, comfortable, and removable alternative to traditional
-                  braces. From crowding and spacing to mild bite correction, we help
-                  patients across Ahmedabad achieve confident smiles with personalised
-                  3D digital planning. You can also read more about{" "}
+                  From crowding and spacing to mild bite correction, we help patients across
+                  Ahmedabad achieve confident smiles with personalised 3D treatment planning.
+                  You can also read more about{" "}
                   <Link
                     to="/blog/invisalign-cost-ahmedabad"
                     className="text-blue-600 font-semibold hover:underline"
@@ -572,6 +569,17 @@ export default function AlignersPage() {
                   </Link>{" "}
                   before choosing your treatment.
                 </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <IndianRupee
+                      size={16}
+                      className="text-green-600"
+                      aria-hidden="true"
+                    />
+                    <span>Aligners cost in Ahmedabad: ₹80,000 – ₹2,00,000</span>
+                  </div>
+                </div>
 
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
@@ -591,10 +599,10 @@ export default function AlignersPage() {
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
                   <button
                     onClick={scrollToAppointment}
-                    aria-label="Book clear aligners consultation at Sumukh Dental Clinic Ahmedabad"
+                    aria-label="Book Invisalign consultation at Sumukh Dental Clinic Ahmedabad"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-white font-bold shadow-md transition hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
                   >
-                    Book Aligners Consultation
+                    Book Invisalign Consultation
                     <ArrowRight size={18} aria-hidden="true" />
                   </button>
                 </div>
@@ -651,8 +659,8 @@ export default function AlignersPage() {
               <div className="relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[700px]">
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
-                    <div className="w-full h-[360px] sm:h-[460px] md:h-[620px] rounded-[1.5rem] overflow-hidden">
-                      <img
+                    <div className="w-full h-[360px] sm:h-[460px] md:h-[700px] rounded-[1.5rem] overflow-hidden">
+                     <img
                         src="/braces/invisible-aligners-in-ahmedabad.webp"
                         alt={`Clear aligners and Invisalign treatment by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
                         loading="eager"
@@ -676,7 +684,7 @@ export default function AlignersPage() {
               {[
                 "In-house 3D iTero Scanning",
                 "Personalised Digital Planning",
-                "Aesthetic Orthodontics",
+                "Invisalign & Clear Aligners",
                 "Patient-Centered Care",
               ].map((item, index) => (
                 <div
@@ -703,7 +711,7 @@ export default function AlignersPage() {
                 id="why-aligners-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Why Choose Clear Aligners in Ahmedabad?
+                Why Choose Invisalign & Clear Aligners in Ahmedabad?
               </h2>
               <p className="speakable text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 Clear aligners are a popular orthodontic solution in Ahmedabad for
@@ -756,7 +764,7 @@ export default function AlignersPage() {
                   id="why-sumukh-heading"
                   className="text-3xl md:text-4xl font-bold text-blue-900 mb-4"
                 >
-                  Why Patients Choose {CLINIC_NAME} for Clear Aligners in Ahmedabad
+                  Why Patients Choose {CLINIC_NAME} for Invisalign & Clear Aligners in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
                   As a trusted orthodontic clinic in Sola, Ahmedabad, we combine
@@ -838,7 +846,7 @@ export default function AlignersPage() {
                   id="candidates-heading"
                   className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-5"
                 >
-                  Who Can Benefit from Clear Aligners in Ahmedabad?
+                  Who Can Benefit from Invisalign & Clear Aligners in Ahmedabad?
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl">
                   Clear aligner treatment at {CLINIC_NAME}, Sola, can help correct
@@ -924,10 +932,10 @@ export default function AlignersPage() {
                     trackAlignerClick("schedule-aligner-evaluation");
                     scrollToAppointment();
                   }}
-                  aria-label="Schedule a clear aligners evaluation in Ahmedabad"
+                  aria-label="Schedule an Invisalign evaluation in Ahmedabad"
                   className="inline-flex items-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 hover:scale-105"
                 >
-                  Schedule an Evaluation
+                  Schedule an Invisalign Evaluation
                 </button>
               </aside>
             </div>
@@ -1066,7 +1074,7 @@ export default function AlignersPage() {
                 id="cases-heading"
                 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4"
               >
-                See Real Clear Aligner Cases
+                See Real Invisalign & Clear Aligner Cases
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
                 Looking at real cases builds trust and also strengthens internal relevance for your aligners page. Instead of a separate before-and-after section here, explore our dedicated aligner case photographs in the gallery.
@@ -1133,7 +1141,7 @@ export default function AlignersPage() {
                 id="cost-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Cost of Clear Aligners in Ahmedabad
+                Cost of Invisalign & Clear Aligners in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 The cost of clear aligners or Invisalign in Ahmedabad at {CLINIC_NAME} usually ranges from <span className="font-semibold text-blue-900">₹80,000 to ₹2,00,000</span>, depending on the aligner system chosen, the complexity of your case, and the estimated treatment duration. We provide transparent, personalised guidance after a detailed clinical and digital evaluation. You can also read our detailed guide on{" "}
@@ -1222,7 +1230,7 @@ export default function AlignersPage() {
         <section className="py-10 bg-blue-50/60" aria-label="Areas served in Ahmedabad">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-bold text-blue-900 mb-3">
-              Serving Clear Aligner Patients Across Ahmedabad
+              Serving Invisalign & Clear Aligner Patients Across Ahmedabad
             </h2>
             <p className="text-slate-600 mb-5 max-w-3xl mx-auto">
               {CLINIC_NAME} is located in Sola, Science City Road, and is easily
@@ -1269,7 +1277,7 @@ export default function AlignersPage() {
                 id="map-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Visit Our Clear Aligner Clinic in Ahmedabad
+                Visit Our Invisalign & Clear Aligner Clinic in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 Conveniently located in Sola, Science City, Ahmedabad and easily
@@ -1312,7 +1320,7 @@ export default function AlignersPage() {
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Ready to Start Your Clear Aligner Journey in Ahmedabad?
+              Ready to Start Your Invisalign Journey in Ahmedabad?
             </h2>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">
               Schedule a consultation with {DOCTOR_NAME}, {DOCTOR_DEGREE} at{" "}
@@ -1321,10 +1329,10 @@ export default function AlignersPage() {
             </p>
             <button
               onClick={scrollToAppointment}
-              aria-label="Book clear aligners consultation in Ahmedabad"
+              aria-label="Book Invisalign consultation in Ahmedabad"
               className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg font-semibold"
             >
-              Book Your Free Consultation
+              Book Your Invisalign Consultation
             </button>
           </div>
         </section>
@@ -1340,7 +1348,7 @@ export default function AlignersPage() {
                 id="faq-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Frequently Asked Questions About Clear Aligners in Ahmedabad
+                Frequently Asked Questions About Invisalign & Clear Aligners in Ahmedabad
               </h2>
               <p className="text-lg text-slate-600">
                 Common questions patients ask before starting Invisalign or clear
@@ -1379,7 +1387,7 @@ export default function AlignersPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 md:p-12 shadow-[0_18px_45px_rgba(15,23,42,0.08)] text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Let's Plan Your Best Smile with the Best Clear Aligners in Ahmedabad
+                Let’s Plan Your Best Smile with Invisalign & Clear Aligners in Ahmedabad
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
                 Whether you are considering Invisalign, invisible braces, or other{" "}
@@ -1394,10 +1402,10 @@ export default function AlignersPage() {
               </p>
               <button
                 onClick={scrollToAppointment}
-                aria-label="Book a clear aligners consultation at Sumukh Dental Clinic Ahmedabad"
+                aria-label="Book an Invisalign consultation at Sumukh Dental Clinic Ahmedabad"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
               >
-                Book an Aligners Consultation
+                Book an Invisalign Consultation
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
             </div>

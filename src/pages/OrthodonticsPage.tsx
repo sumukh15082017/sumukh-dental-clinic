@@ -224,7 +224,7 @@ export default function OrthodonticsPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Orthodontics & Braces",
+        name: "Braces Treatment in Ahmedabad",
         item: CANONICAL_URL,
       },
     ],
@@ -304,10 +304,10 @@ export default function OrthodonticsPage() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
+      ratingValue: "5.0",
       reviewCount: "167",
       bestRating: "5",
-      worstRating: "1",
+      worstRating: "4",
     },
   };
 
@@ -316,14 +316,14 @@ export default function OrthodonticsPage() {
     "@type": "MedicalWebPage",
     "@id": CANONICAL_URL,
     url: CANONICAL_URL,
-    name: `Best Orthodontist in Ahmedabad | Braces & Clear Aligners | ${CLINIC_NAME}`,
+    name: `Braces Treatment in Ahmedabad | Metal, Ceramic & Self-Ligating Braces | ${CLINIC_NAME}`,
     description:
-      "Expert orthodontic treatment in Ahmedabad by Dr. Dipen Thakker — metal braces, ceramic braces, self-ligating braces, lingual braces, and clear aligners at Sumukh Dental Clinic, Sola.",
+      "Expert braces treatment in Ahmedabad by Dr. Dipen Thakker — metal braces, ceramic braces, self-ligating braces, lingual braces, and clear aligners at Sumukh Dental Clinic, Sola.",
     inLanguage: "en-IN",
     isPartOf: { "@type": "WebSite", url: SITE_BASE, name: CLINIC_NAME },
     about: {
       "@type": "MedicalProcedure",
-      name: "Orthodontic Treatment",
+      name: "Braces Treatment",
       procedureType: "https://schema.org/TherapeuticProcedure",
     },
     speakable: {
@@ -386,16 +386,16 @@ export default function OrthodonticsPage() {
       <Helmet>
         <html lang="en" />
         <title>
-          Best Orthodontist in Ahmedabad | Braces &amp; Clear Aligners |{" "}
+          Braces Treatment in Ahmedabad | Metal, Ceramic &amp; Self-Ligating Braces |{" "}
           {CLINIC_NAME}
         </title>
         <meta
           name="description"
-          content={`Looking for the best orthodontist in Ahmedabad? ${DOCTOR_NAME} (${DOCTOR_DEGREE}) at ${CLINIC_NAME} offers metal braces, ceramic braces, self-ligating braces, lingual braces, and clear aligners in Sola, Science City. Book a consultation today.`}
+          content={`Looking for braces near you in Ahmedabad? ${DOCTOR_NAME} (${DOCTOR_DEGREE}) at ${CLINIC_NAME} offers metal braces, ceramic braces, self-ligating braces, lingual braces, and clear aligners in Sola, Science City. Book a braces consultation today.`}
         />
         <meta
           name="keywords"
-          content="orthodontist in Ahmedabad, braces treatment Ahmedabad, best orthodontist Ahmedabad, ceramic braces Ahmedabad, clear aligners Ahmedabad, self ligating braces Ahmedabad, lingual braces Ahmedabad, Invisalign Ahmedabad, metal braces Ahmedabad, braces cost Ahmedabad, orthodontic treatment Sola Ahmedabad, teeth straightening Ahmedabad"
+          content="braces treatment Ahmedabad, braces near me Ahmedabad, metal braces Ahmedabad, ceramic braces Ahmedabad, self ligating braces Ahmedabad, lingual braces Ahmedabad, braces specialist Ahmedabad, braces cost Ahmedabad, orthodontist Ahmedabad, orthodontic treatment Sola Ahmedabad"
         />
         <link rel="canonical" href={CANONICAL_URL} />
         <meta
@@ -414,11 +414,11 @@ export default function OrthodonticsPage() {
         <meta property="og:site_name" content={CLINIC_NAME} />
         <meta
           property="og:title"
-          content={`Best Orthodontist in Ahmedabad | Braces & Clear Aligners | ${CLINIC_NAME}`}
+          content={`Braces Treatment in Ahmedabad | Metal, Ceramic & Self-Ligating Braces | ${CLINIC_NAME}`}
         />
         <meta
           property="og:description"
-          content={`Expert braces and clear aligner treatment in Ahmedabad by ${DOCTOR_NAME} at ${CLINIC_NAME}. Metal, ceramic, self-ligating, lingual braces & Invisalign. Book online.`}
+          content={`Expert braces treatment in Ahmedabad by ${DOCTOR_NAME} at ${CLINIC_NAME}. Metal, ceramic, self-ligating, lingual braces and clear aligners. Book online.`}
         />
         <meta property="og:url" content={CANONICAL_URL} />
         <meta property="og:image" content={OG_IMAGE} />
@@ -426,21 +426,21 @@ export default function OrthodonticsPage() {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Best orthodontist in Ahmedabad — Sumukh Dental Clinic braces treatment"
+          content="Braces treatment in Ahmedabad — Sumukh Dental Clinic"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Best Orthodontist in Ahmedabad | Braces & Clear Aligners | ${CLINIC_NAME}`}
+          content={`Braces Treatment in Ahmedabad | Metal, Ceramic & Self-Ligating Braces | ${CLINIC_NAME}`}
         />
         <meta
           name="twitter:description"
-          content={`Advanced orthodontic treatment in Ahmedabad by ${DOCTOR_NAME}. Metal braces, ceramic braces, clear aligners and more at ${CLINIC_NAME}, Sola.`}
+          content={`Advanced braces treatment in Ahmedabad by ${DOCTOR_NAME}. Metal braces, ceramic braces, self-ligating braces and more at ${CLINIC_NAME}, Sola.`}
         />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta
           name="twitter:image:alt"
-          content="Orthodontic braces treatment in Ahmedabad"
+          content="Braces treatment in Ahmedabad"
         />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">
@@ -456,7 +456,7 @@ export default function OrthodonticsPage() {
         {/* ── Hero ──────────────────────────────────────────────────────── */}
         <section
           className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 md:py-24"
-          aria-label="Orthodontic treatment hero"
+          aria-label="Braces treatment hero"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
@@ -497,32 +497,55 @@ export default function OrthodonticsPage() {
 
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700 font-semibold mb-5 shadow-sm">
                   <Sparkles size={16} aria-hidden="true" />
-                  Orthodontic Treatment in Ahmedabad
+                  Braces Treatment in Ahmedabad
                 </div>
 
+                <p className="text-sm md:text-base font-semibold uppercase tracking-wide text-blue-700 mb-3">
+                  Looking for braces near you in Ahmedabad?
+                </p>
+
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
-                  Best Orthodontist in Ahmedabad —
-                  <span className="text-blue-500"> Braces &amp; Clear Aligners</span>
+                  Braces Treatment in Ahmedabad —
+                  <span className="text-blue-500">
+                    {" "}
+                    Metal, Ceramic &amp; Self-Ligating Braces
+                  </span>
                 </h1>
 
                 <p className="speakable text-xl md:text-2xl text-blue-600 font-semibold mb-4">
-                  Expert Braces Treatment by {DOCTOR_NAME}, {DOCTOR_DEGREE}
+                  Expert braces treatment by {DOCTOR_NAME}, {DOCTOR_DEGREE}
+                </p>
+
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-5 max-w-2xl">
+                  If you are searching for braces treatment near you,
+                  or braces specialist in Ahmedabad, {CLINIC_NAME}, Science city offers
+                  advanced orthodontic treatment including metal braces, ceramic
+                  braces, self-ligating braces and lingual braces for crowded teeth,
+                  spacing, bite correction and smile improvement.
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  Looking for an orthodontist in Ahmedabad? At {CLINIC_NAME}, Sola,
-                  we provide advanced orthodontic treatment — including metal braces,
-                  ceramic braces, self-ligating braces, lingual braces, and{" "}
+                  We help patients across Ahmedabad achieve healthier, more confident smiles                    with personalized treatment planning and modern orthodontic care. Looking
+                  for a removable option? Explore{" "}
                   <Link
                     to="/aligners"
                     className="text-blue-600 font-semibold hover:underline"
                   >
                     clear aligners in Ahmedabad
-                  </Link>{" "}
-                  — tailored to your smile and lifestyle. From crowded teeth and
-                  spacing to bite correction and full smile enhancement, we help
-                  patients across Ahmedabad achieve healthier, more confident smiles.
+                  </Link>
+                  .
                 </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <IndianRupee
+                      size={16}
+                      className="text-green-600"
+                      aria-hidden="true"
+                    />
+                    <span>Braces cost in Ahmedabad: ₹25,000 – ₹1,20,000</span>
+                  </div>
+                </div>
 
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
@@ -542,18 +565,18 @@ export default function OrthodonticsPage() {
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-6">
                   <button
                     onClick={scrollToAppointment}
-                    aria-label="Book orthodontic consultation at Sumukh Dental Clinic Ahmedabad"
+                    aria-label="Book braces consultation at Sumukh Dental Clinic Ahmedabad"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-white font-bold shadow-md transition hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
                   >
-                    Book Orthodontic Consultation
+                    Book Braces Consultation
                     <ArrowRight size={18} aria-hidden="true" />
                   </button>
                   <button
                     onClick={scrollToOptions}
-                    aria-label="Explore braces and aligner options"
+                    aria-label="Explore braces treatment options"
                     className="inline-flex items-center justify-center rounded-full border-2 border-blue-500 px-7 py-3.5 text-blue-600 font-semibold transition hover:bg-blue-50"
                   >
-                    Explore Treatment Options
+                    Explore Braces Options
                   </button>
                 </div>
 
@@ -565,7 +588,7 @@ export default function OrthodonticsPage() {
                     onClick={() => trackOrthoClick("smile-simulation")}
                     className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-blue-200 bg-white/70 px-6 py-3 font-bold text-blue-700 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:shadow-xl"
                     aria-label="Try Invisalign smile simulation — Sumukh Dental Clinic"
-                    title="Try Your Invisalign Smile Simulation"
+                    title="Try Your Smile Simulation"
                   >
                     <span
                       className="absolute inset-0 bg-gradient-to-r from-blue-100/60 via-white/40 to-cyan-100/60 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
@@ -603,10 +626,10 @@ export default function OrthodonticsPage() {
               <div className="relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[700px]">
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
-                    <div className="w-full h-[360px] sm:h-[460px] md:h-[620px] rounded-[1.5rem] overflow-hidden">
+                    <div className="w-full h-[360px] sm:h-[460px] md:h-[700px] rounded-[1.5rem] overflow-hidden">
                       <img
                         src="/braces/braces-smile-closeup-ahmedabad-orthodontist.webp"
-                        alt={`Best orthodontist in Ahmedabad — braces treatment by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
+                        alt={`Braces treatment in Ahmedabad by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
                         loading="eager"
                         fetchPriority="high"
                         width={700}
@@ -626,7 +649,7 @@ export default function OrthodonticsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                "Advanced Digital Diagnosis",
+                "Braces Specialist in Ahmedabad",
                 "Personalised Treatment Planning",
                 "Modern Orthodontic Technology",
                 "Patient-Centered Care",
@@ -644,7 +667,7 @@ export default function OrthodonticsPage() {
           </div>
         </section>
 
-        {/* ── Why Orthodontic Treatment ─────────────────────────────────── */}
+        {/* ── Why Braces Treatment ─────────────────────────────────────── */}
         <section
           className="py-16 md:py-20 bg-white"
           aria-labelledby="why-ortho-heading"
@@ -655,10 +678,10 @@ export default function OrthodonticsPage() {
                 id="why-ortho-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Why Choose Orthodontic Treatment?
+                Why Choose Braces Treatment?
               </h2>
               <p className="speakable text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Orthodontic treatment in Ahmedabad is not only about improving the
+                Braces treatment in Ahmedabad is not only about improving the
                 appearance of your smile. It can also correct bite balance, improve
                 oral hygiene, enhance chewing comfort, and support long-term dental
                 health for children, teens, and adults.
@@ -720,7 +743,7 @@ export default function OrthodonticsPage() {
                   id="why-sumukh-heading"
                   className="text-3xl md:text-4xl font-bold text-blue-900 mb-4"
                 >
-                  Why Patients Choose {CLINIC_NAME} for Orthodontic Treatment in Ahmedabad
+                  Why Patients Choose {CLINIC_NAME} for Braces Treatment in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
                   As a specialist orthodontic clinic in Sola, Ahmedabad, we combine
@@ -738,7 +761,7 @@ export default function OrthodonticsPage() {
                       <Microscope className="text-blue-600" size={22} aria-hidden="true" />
                     ),
                     title: "Precision Diagnosis & Planning",
-                    desc: "Every orthodontic case at our Ahmedabad clinic begins with a thorough analysis of teeth position, bite relationship, smile line, and facial balance using modern diagnostic tools.",
+                    desc: "Every braces case at our Ahmedabad clinic begins with a thorough analysis of teeth position, bite relationship, smile line, and facial balance using modern diagnostic tools.",
                   },
                   {
                     icon: (
@@ -805,11 +828,11 @@ export default function OrthodonticsPage() {
                   id="problems-heading"
                   className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-5"
                 >
-                  Orthodontic Problems We Treat in Ahmedabad
+                  Braces Problems We Treat in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-                  Orthodontic treatment at {CLINIC_NAME}, Sola, Ahmedabad can address
-                  a wide variety of teeth alignment and bite-related concerns in
+                  Braces treatment at {CLINIC_NAME}, Sola, Ahmedabad can address a
+                  wide variety of teeth alignment and bite-related concerns in
                   children, teens, and adults.
                 </p>
 
@@ -830,13 +853,13 @@ export default function OrthodonticsPage() {
 
               <aside className={premiumCard} aria-label="Consultation prompt">
                 <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
-                  Not sure which orthodontic treatment is right for you?
+                  Not sure which braces option is right for you?
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
                   {DOCTOR_NAME} evaluates your teeth position, bite, jaw relationship,
                   smile line, and facial profile before recommending the most suitable
-                  option — whether that is braces, ceramic braces, self-ligating braces,
-                  lingual braces, or{" "}
+                  option — whether that is metal braces, ceramic braces,
+                  self-ligating braces, lingual braces, or{" "}
                   <Link
                     to="/aligners"
                     className="text-blue-600 font-semibold hover:underline"
@@ -870,10 +893,10 @@ export default function OrthodonticsPage() {
                     trackOrthoClick("schedule-evaluation");
                     scrollToAppointment();
                   }}
-                  aria-label="Schedule an orthodontic evaluation in Ahmedabad"
+                  aria-label="Schedule a braces evaluation in Ahmedabad"
                   className="inline-flex items-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 hover:scale-105"
                 >
-                  Schedule an Evaluation
+                  Schedule a Braces Evaluation
                 </button>
               </aside>
             </div>
@@ -892,11 +915,12 @@ export default function OrthodonticsPage() {
                 id="options-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Orthodontic Treatment Options in Ahmedabad
+                Braces Treatment Options in Ahmedabad
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                We offer a full range of orthodontic solutions to match your clinical
-                needs, lifestyle, and aesthetic preferences. In selected cases,{" "}
+                We offer a full range of braces and orthodontic solutions to match
+                your clinical needs, lifestyle, and aesthetic preferences. In
+                selected cases,{" "}
                 <Link
                   to="/veneers"
                   className="text-blue-600 font-semibold hover:underline"
@@ -976,7 +1000,7 @@ export default function OrthodonticsPage() {
                 id="blogs-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Helpful Orthodontic Guides
+                Helpful Braces & Orthodontic Guides
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 Read these articles to understand braces cost, Invisalign pricing,
@@ -1117,7 +1141,7 @@ export default function OrthodonticsPage() {
         <section className="py-10 bg-blue-50/60" aria-label="Areas served in Ahmedabad">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-bold text-blue-900 mb-3">
-              Serving Patients Across Ahmedabad
+              Serving Braces Patients Across Ahmedabad
             </h2>
             <p className="text-slate-600 mb-5 max-w-3xl mx-auto">
               {CLINIC_NAME} is conveniently located in Sola, Science City Road, and
@@ -1164,7 +1188,7 @@ export default function OrthodonticsPage() {
                 id="map-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Visit Our Orthodontic Clinic in Ahmedabad
+                Visit Our Braces Clinic in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                 Conveniently located in Sola, Science City, Ahmedabad and easily
@@ -1206,19 +1230,19 @@ export default function OrthodonticsPage() {
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Ready to Start Your Smile Journey in Ahmedabad?
+              Ready to Start Braces Treatment in Ahmedabad?
             </h2>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">
               Schedule a consultation with {DOCTOR_NAME}, MDS Orthodontist at{" "}
-              {CLINIC_NAME}, to find out which braces or aligner treatment is the
-              right fit for your smile, goals, and lifestyle.
+              {CLINIC_NAME}, to find out which braces treatment is the right fit for
+              your smile, bite, and lifestyle.
             </p>
             <button
               onClick={scrollToAppointment}
-              aria-label="Book orthodontic consultation in Ahmedabad"
+              aria-label="Book braces consultation in Ahmedabad"
               className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg font-semibold"
             >
-              Book Your Free Consultation
+              Book Your Braces Consultation
             </button>
           </div>
         </section>
@@ -1234,7 +1258,7 @@ export default function OrthodonticsPage() {
                 id="faq-heading"
                 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-900 mb-4"
               >
-                Frequently Asked Questions About Orthodontics in Ahmedabad
+                Frequently Asked Questions About Braces in Ahmedabad
               </h2>
               <p className="text-lg text-slate-600">
                 Common questions patients ask before starting braces or aligner
@@ -1273,7 +1297,7 @@ export default function OrthodonticsPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 md:p-12 shadow-[0_18px_45px_rgba(15,23,42,0.08)] text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Let's Plan Your Best Smile with the Best Orthodontist in Ahmedabad
+                Let’s Plan Your Best Smile with Expert Braces Treatment in Ahmedabad
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
                 Whether you are considering metal braces, ceramic braces,
@@ -1289,10 +1313,10 @@ export default function OrthodonticsPage() {
               </p>
               <button
                 onClick={scrollToAppointment}
-                aria-label="Book an orthodontic consultation at Sumukh Dental Clinic Ahmedabad"
+                aria-label="Book a braces consultation at Sumukh Dental Clinic Ahmedabad"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
               >
-                Book an Orthodontic Consultation
+                Book a Braces Consultation
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
             </div>
