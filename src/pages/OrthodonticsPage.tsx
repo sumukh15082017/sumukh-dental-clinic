@@ -517,8 +517,7 @@ export default function OrthodonticsPage() {
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-5 max-w-2xl">
-                  If you are searching for braces treatment near you,
-                  or braces specialist in Ahmedabad, {CLINIC_NAME}, Science city offers
+                  If you are looking to get braces treatment near you in Ahmedabad, {CLINIC_NAME}, Science city offers
                   advanced orthodontic treatment including metal braces, ceramic
                   braces, self-ligating braces and lingual braces for crowded teeth,
                   spacing, bite correction and smile improvement.
@@ -558,7 +557,7 @@ export default function OrthodonticsPage() {
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
                     <MapPin size={16} className="text-blue-600" aria-hidden="true" />
-                    <span>Sola · Science City · Ahmedabad</span>
+                    <span>Science City · Ahmedabad</span>
                   </div>
                 </div>
 
@@ -626,9 +625,9 @@ export default function OrthodonticsPage() {
               <div className="relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[700px]">
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
-                    <div className="w-full h-[360px] sm:h-[460px] md:h-[700px] rounded-[1.5rem] overflow-hidden">
+                    <div className="w-full h-[360px] sm:h-[460px] md:h-[800px] rounded-[1.5rem] overflow-hidden">
                       <img
-                        src="/braces/braces-smile-closeup-ahmedabad-orthodontist.webp"
+                        src="braces/braces-smile-closeup-ahmedabad-orthodontist-near-me.webp"
                         alt={`Braces treatment in Ahmedabad by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
                         loading="eager"
                         fetchPriority="high"
@@ -746,7 +745,7 @@ export default function OrthodonticsPage() {
                   Why Patients Choose {CLINIC_NAME} for Braces Treatment in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  As a specialist orthodontic clinic in Sola, Ahmedabad, we combine
+                  As a specialist orthodontic clinic in Science City, Ahmedabad, we combine
                   modern orthodontic principles, precise digital diagnosis, and
                   patient-focused care to create treatment plans that are effective,
                   comfortable, and suited to your lifestyle. {DOCTOR_NAME} brings
@@ -831,7 +830,7 @@ export default function OrthodonticsPage() {
                   Braces Problems We Treat in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-                  Braces treatment at {CLINIC_NAME}, Sola, Ahmedabad can address a
+                  Braces treatment at {CLINIC_NAME}, Science City, Ahmedabad can address a
                   wide variety of teeth alignment and bite-related concerns in
                   children, teens, and adults.
                 </p>
@@ -1144,7 +1143,7 @@ export default function OrthodonticsPage() {
               Serving Braces Patients Across Ahmedabad
             </h2>
             <p className="text-slate-600 mb-5 max-w-3xl mx-auto">
-              {CLINIC_NAME} is conveniently located in Sola, Science City Road, and
+              {CLINIC_NAME} is conveniently located in Science City Road, and
               is easily accessible from nearby areas including Thaltej, Bodakdev,
               Satellite, Gota, Chandkheda, Vastral, and Motera.
             </p>
@@ -1191,7 +1190,7 @@ export default function OrthodonticsPage() {
                 Visit Our Braces Clinic in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Conveniently located in Sola, Science City, Ahmedabad and easily
+                Conveniently located in Science City, Ahmedabad and easily
                 accessible from nearby areas for braces, aligners, and orthodontic care.
               </p>
             </div>

@@ -297,7 +297,7 @@ export default function ImplantsPage() {
     "@type": "MedicalWebPage",
     "@id": CANONICAL_URL,
     url: CANONICAL_URL,
-    name: `Best Dental Implants in Ahmedabad | Tooth Replacement | ${CLINIC_NAME}`,
+    name: `Dental Implants in Ahmedabad | Single Tooth, Multiple & Full Arch Implants | ${CLINIC_NAME}`,
     description:
       "Expert dental implant treatment in Ahmedabad at Sumukh Dental Clinic — single tooth implants, multiple implants, and full-arch All-on-4 solutions with personalised planning and natural-looking results.",
     inLanguage: "en-IN",
@@ -359,15 +359,15 @@ export default function ImplantsPage() {
       <Helmet>
         <html lang="en" />
         <title>
-          Best Dental Implants in Ahmedabad | Tooth Replacement | {CLINIC_NAME}
+          Dental Implants in Ahmedabad | Single Tooth, Multiple &amp; Full Arch Implants | {CLINIC_NAME}
         </title>
         <meta
           name="description"
-          content={`Looking for dental implants in Ahmedabad? ${CLINIC_NAME} offers single tooth implants, multiple implants, and full-arch All-on-4 solutions with personalised planning and natural-looking results in Sola, Science City. Book a consultation today.`}
+          content={`Looking for dental implants in Ahmedabad? ${CLINIC_NAME} offers single tooth implants, multiple implants, and full-arch All-on-4 solutions with personalised planning and natural-looking results in Sola, Science City. Book an implant consultation today.`}
         />
         <meta
           name="keywords"
-          content="dental implants Ahmedabad, tooth replacement Ahmedabad, single tooth implant Ahmedabad, full arch implants Ahmedabad, All-on-4 Ahmedabad, implant dentist Ahmedabad, missing teeth Ahmedabad, dental implant cost Ahmedabad, implants Sola Ahmedabad, teeth replacement Ahmedabad"
+          content="dental implants Ahmedabad, implant dentist Ahmedabad, tooth replacement Ahmedabad, single tooth implant Ahmedabad, full arch implants Ahmedabad, All-on-4 Ahmedabad, missing teeth replacement Ahmedabad, dental implant cost Ahmedabad, implants near me Ahmedabad, teeth replacement Ahmedabad"
         />
         <link rel="canonical" href={CANONICAL_URL} />
 
@@ -390,7 +390,7 @@ export default function ImplantsPage() {
         <meta property="og:site_name" content={CLINIC_NAME} />
         <meta
           property="og:title"
-          content={`Best Dental Implants in Ahmedabad | Tooth Replacement | ${CLINIC_NAME}`}
+          content={`Dental Implants in Ahmedabad | Tooth Replacement | ${CLINIC_NAME}`}
         />
         <meta
           property="og:description"
@@ -402,13 +402,13 @@ export default function ImplantsPage() {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Best dental implants in Ahmedabad — tooth replacement at Sumukh Dental Clinic, Sola"
+          content="Dental implants in Ahmedabad — tooth replacement at Sumukh Dental Clinic, Sola"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Best Dental Implants in Ahmedabad | Tooth Replacement | ${CLINIC_NAME}`}
+          content={`Dental Implants in Ahmedabad | Tooth Replacement | ${CLINIC_NAME}`}
         />
         <meta
           name="twitter:description"
@@ -476,8 +476,12 @@ export default function ImplantsPage() {
                   Dental Implants in Ahmedabad
                 </div>
 
+                <p className="text-sm md:text-base font-semibold uppercase tracking-wide text-blue-700 mb-3">
+                  Looking for dental implants near you in Ahmedabad?
+                </p>
+
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-blue-900 leading-[1.02] mb-4">
-                  Best Dental Implants in Ahmedabad —
+                  Dental Implants in Ahmedabad —
                   <span className="text-blue-500">
                     {" "}
                     Natural-Looking Tooth Replacement
@@ -485,18 +489,17 @@ export default function ImplantsPage() {
                 </h1>
 
                 <p className="speakable text-xl md:text-2xl text-blue-600 font-semibold mb-4">
-                  Expert Implant Treatment at {CLINIC_NAME}, Sola, Science City
+                  Expert implant treatment at {CLINIC_NAME}, Science City
+                </p>
+
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-5 max-w-2xl">
+                  If you are looking to get dental implants in near you, in Ahmedabad, {CLINIC_NAME} provides advanced implant solutions including single tooth implants, multiple implants, and full-arch All-on-4 rehabilitation with personalised planning and natural-looking results.
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                  Looking for dental implants in Ahmedabad? At {CLINIC_NAME}, we
-                  provide advanced tooth replacement solutions — including single
-                  tooth implants, multiple implants, and full-arch All-on-4
-                  rehabilitation — with personalised planning and natural-looking
-                  results. Dental implants are one of the most reliable and
-                  long-lasting options for restoring chewing function, smile
-                  aesthetics, and long-term oral health. You can also read our
-                  detailed guide on{" "}
+                  Dental implants are one of the most reliable and long-lasting options for
+                  restoring chewing function, smile aesthetics, and long-term oral health.
+                  You can also read our detailed guide on{" "}
                   <Link
                     to="/blog/dental-implants-ahmedabad-guide"
                     className="text-blue-600 font-semibold hover:underline"
@@ -505,6 +508,17 @@ export default function ImplantsPage() {
                   </Link>{" "}
                   before deciding.
                 </p>
+
+                <div className="flex flex-wrap items-center gap-4 mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
+                    <IndianRupee
+                      size={16}
+                      className="text-green-600"
+                      aria-hidden="true"
+                    />
+                    <span>Implant cost depends on case type and restoration plan</span>
+                  </div>
+                </div>
 
                 <div className="flex flex-wrap items-center gap-4 mb-8">
                   <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 bg-yellow-50 px-4 py-2 text-slate-700 font-semibold shadow-sm">
@@ -517,7 +531,7 @@ export default function ImplantsPage() {
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
                     <MapPin size={16} className="text-blue-600" aria-hidden="true" />
-                    <span>Sola · Science City · Ahmedabad</span>
+                    <span>Science City · Ahmedabad</span>
                   </div>
                 </div>
 
@@ -564,10 +578,10 @@ export default function ImplantsPage() {
               <div className="relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-xl">
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
-                    <div className="w-full h-[320px] sm:h-[380px] md:h-[520px] rounded-[1.5rem] overflow-hidden bg-white/10">
+                    <div className="w-full h-[320px] sm:h-[380px] md:h-[720px] rounded-[1.5rem] overflow-hidden bg-white/10">
                       <img
                         src="/dental-implant-in-ahmedabad.webp"
-                        alt={`Best dental implants in Ahmedabad — tooth replacement treatment at ${CLINIC_NAME}, Sola Science City`}
+                        alt={`Dental implants in Ahmedabad — tooth replacement treatment at ${CLINIC_NAME}, Science City`}
                         loading="eager"
                         fetchPriority="high"
                         width={580}
@@ -680,7 +694,7 @@ export default function ImplantsPage() {
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
                   We combine modern implant planning, careful clinical diagnosis,
                   and patient-focused care to deliver precise, comfortable, and
-                  predictable tooth replacement outcomes at our Sola, Ahmedabad clinic.
+                  predictable tooth replacement outcomes at our Science City, Ahmedabad clinic.
                 </p>
               </div>
 
@@ -1071,7 +1085,7 @@ export default function ImplantsPage() {
               Serving Dental Implant Patients Across Ahmedabad
             </h2>
             <p className="text-slate-600 mb-5 max-w-3xl mx-auto">
-              {CLINIC_NAME} is conveniently located in Sola, Science City Road,
+              {CLINIC_NAME} is conveniently located in Science City Road,
               and is easily accessible for patients seeking dental implants from
               Thaltej, Bodakdev, Satellite, Gota, Chandkheda, Naranpura, and across Ahmedabad.
             </p>
@@ -1118,7 +1132,7 @@ export default function ImplantsPage() {
                 Visit Our Dental Implant Clinic in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Conveniently located in Sola, Science City, Ahmedabad for dental
+                Conveniently located in Science City, Ahmedabad for dental
                 implants, implant crowns, implant bridges, and full-mouth rehabilitation.
               </p>
             </div>
@@ -1172,7 +1186,7 @@ export default function ImplantsPage() {
               aria-label="Schedule a dental implant evaluation in Ahmedabad"
               className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg font-semibold"
             >
-              Schedule Your Free Consultation
+              Schedule Implant Evaluation
             </button>
           </div>
         </section>
@@ -1227,11 +1241,11 @@ export default function ImplantsPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2rem] border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-8 md:p-12 shadow-[0_18px_45px_rgba(15,23,42,0.08)] text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Restore Your Smile with the Best Dental Implants in Ahmedabad
+                Restore Your Smile with Dental Implants in Ahmedabad
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
                 Whether you need a single tooth implant, multiple implants, or a
-                full-arch All-on-4 solution, {CLINIC_NAME} in Sola, Ahmedabad can
+                full-arch All-on-4 solution, {CLINIC_NAME} in Science City, Ahmedabad can
                 help you choose the right treatment plan with clarity, care, and
                 long-term results.
               </p>
@@ -1240,7 +1254,7 @@ export default function ImplantsPage() {
                 aria-label="Book a dental implant consultation at Sumukh Dental Clinic Ahmedabad"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-md transition hover:bg-blue-700 hover:scale-105"
               >
-                Book an Implant Consultation
+                Book Implant Consultation
                 <ArrowRight size={18} aria-hidden="true" />
               </button>
             </div>

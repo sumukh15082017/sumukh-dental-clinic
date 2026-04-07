@@ -547,7 +547,7 @@ export default function AlignersPage() {
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-5 max-w-2xl">
-                  If you are searching for Invisalign near you or clear aligners in                             Ahmedabad, {CLINIC_NAME}, Science city, provides advanced clear aligner                       treatment with digital iTero planning for aesthetic, comfortable, and                         removable teeth straightening.
+                  If you are searching for Invisalign or clear aligners near you in Ahmedabad, {CLINIC_NAME}, Science city, provides advanced Invisalgn and clear aligner              treatment with digital iTero planning for aesthetic and comfortable teeth straightening.
                 </p>
 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
@@ -592,7 +592,7 @@ export default function AlignersPage() {
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-slate-700 font-semibold shadow-sm">
                     <MapPin size={16} className="text-blue-600" aria-hidden="true" />
-                    <span>Sola · Science City · Ahmedabad</span>
+                    <span>Science City · Ahmedabad</span>
                   </div>
                 </div>
 
@@ -659,9 +659,9 @@ export default function AlignersPage() {
               <div className="relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[700px]">
                   <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-400 to-blue-600 p-4 sm:p-5 md:p-6 shadow-lg">
-                    <div className="w-full h-[360px] sm:h-[460px] md:h-[700px] rounded-[1.5rem] overflow-hidden">
+                    <div className="w-full h-[360px] sm:h-[460px] md:h-[800px] rounded-[1.5rem] overflow-hidden">
                      <img
-                        src="/braces/invisible-aligners-in-ahmedabad.webp"
+                        src="braces/invisible-aligners-in-ahmedabad-near-me.webp"
                         alt={`Clear aligners and Invisalign treatment by ${DOCTOR_NAME} at ${CLINIC_NAME}, Sola Science City`}
                         loading="eager"
                         fetchPriority="high"
@@ -767,7 +767,7 @@ export default function AlignersPage() {
                   Why Patients Choose {CLINIC_NAME} for Invisalign & Clear Aligners in Ahmedabad
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-                  As a trusted orthodontic clinic in Sola, Ahmedabad, we combine
+                  As a trusted orthodontic clinic in Science City, Ahmedabad, we combine
                   in-house 3D digital scanning, precise smile planning, and
                   patient-focused care to make clear aligner treatment accurate,
                   comfortable, and suited to your lifestyle. {DOCTOR_NAME} brings
@@ -849,7 +849,7 @@ export default function AlignersPage() {
                   Who Can Benefit from Invisalign & Clear Aligners in Ahmedabad?
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-                  Clear aligner treatment at {CLINIC_NAME}, Sola, can help correct
+                  Clear aligner treatment at {CLINIC_NAME}, Sciece City, can help correct
                   many alignment concerns in adults and teens who want a more
                   discreet and comfortable orthodontic option. Patients often also
                   explore{" "}
@@ -1233,7 +1233,7 @@ export default function AlignersPage() {
               Serving Invisalign & Clear Aligner Patients Across Ahmedabad
             </h2>
             <p className="text-slate-600 mb-5 max-w-3xl mx-auto">
-              {CLINIC_NAME} is located in Sola, Science City Road, and is easily
+              {CLINIC_NAME} is located in Science City Road, and is easily
               accessible for patients from Thaltej, Bodakdev, Satellite, Gota,
               Chandkheda, Naranpura, and across Ahmedabad.
             </p>
@@ -1280,7 +1280,7 @@ export default function AlignersPage() {
                 Visit Our Invisalign & Clear Aligner Clinic in Ahmedabad
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Conveniently located in Sola, Science City, Ahmedabad and easily
+                Conveniently located in Science City, Ahmedabad and easily
                 accessible for Invisalign, clear aligners, and aesthetic orthodontic
                 care.
               </p>
