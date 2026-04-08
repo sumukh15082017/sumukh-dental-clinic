@@ -70,9 +70,18 @@ export default function AppointmentForm() {
   const trackGoogleAdsConversion = () => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
-        send_to: "AW-11330826115/0_I5CISZ8IscEIPf-poq",
+        send_to: "AW-11330826115/zcpFCMKRmJgcEIPf-poq",
         value: 1.0,
         currency: "INR",
+      });
+    }
+  };
+
+  const trackGA4Lead = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "generate_lead", {
+        form_name: "appointment_form",
+        treatment_type: formData.treatment_type || "not_selected",
       });
     }
   };
@@ -108,6 +117,7 @@ export default function AppointmentForm() {
       if (notifyError) throw notifyError;
 
       trackGoogleAdsConversion();
+      trackGA4Lead();
       trackMetaLead();
 
       setSubmitStatus("success");
@@ -397,8 +407,8 @@ export default function AppointmentForm() {
                 </li>
               </ul>
             </div>
-          </div>
         </div>
+      </div>
       </div>
     </section>
   );
