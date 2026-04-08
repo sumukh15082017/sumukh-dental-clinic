@@ -23,10 +23,29 @@ export default function FloatingContact() {
 
   const trackConversion = (method: "whatsapp" | "call" | "map") => {
     if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-11330826115/Eg70C06e8YscEIPf-poq",
-        value: 1.0,
-        currency: "INR",
+      let sendTo = "";
+
+      if (method === "whatsapp") {
+        sendTo = "AW-11330826115/uthQCN7nspgcEIPf-poq";
+      } else if (method === "call") {
+        sendTo = "AW-11330826115/Vh6dCLD3m5gcEIPf-poq";
+      } else if (method === "map") {
+        sendTo = "AW-11330826115/JdnQCNOYs5gcEIPf-poq";
+      }
+
+      if (sendTo) {
+        window.gtag("event", "conversion", {
+          send_to: sendTo,
+          value: 1.0,
+          currency: "INR",
+        });
+      }
+    }
+
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "generate_lead", {
+        contact_method: method,
+        source_component: "floating_contact",
       });
     }
 
@@ -233,7 +252,10 @@ export default function FloatingContact() {
               className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition hover:scale-105 hover:bg-blue-700"
               style={
                 bounce
-                  ? { animation: "floatingBounce 0.9s ease-in-out", animationDelay: "0.15s" }
+                  ? {
+                      animation: "floatingBounce 0.9s ease-in-out",
+                      animationDelay: "0.15s",
+                    }
                   : {}
               }
               aria-label="Call Sumukh Dental Clinic"
@@ -247,7 +269,10 @@ export default function FloatingContact() {
               className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500 text-white shadow-xl transition hover:scale-105 hover:bg-red-600"
               style={
                 bounce
-                  ? { animation: "floatingBounce 0.9s ease-in-out", animationDelay: "0.3s" }
+                  ? {
+                      animation: "floatingBounce 0.9s ease-in-out",
+                      animationDelay: "0.3s",
+                    }
                   : {}
               }
               aria-label="Get directions to Sumukh Dental Clinic"
