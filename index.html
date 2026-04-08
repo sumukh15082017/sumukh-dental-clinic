@@ -60,17 +60,20 @@
       content="https://sumukhdentalclinic.com/best-dental-clinic-and-orthodontist-in-ahmedabad.webp"
     />
 
-    <!-- GOOGLE ADS (GTAG) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11330826115"></script>
+    <!-- GOOGLE TAG (GA4 + Ads) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QZT2EGM8W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  // GA4 (PRIMARY)
+  gtag('config', 'G-6QZT2EGM8W', {
+    page_path: window.location.pathname,
+  });
+
+  // Google Ads (SECONDARY)
   gtag('config', 'AW-11330826115');
-  gtag("config", "G-FEWY6X9B1E", {
-  page_path: window.location.pathname,
-});
 </script>
 
     <!-- META PIXEL -->
