@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
     <meta
       name="google-site-verification"
       content="Chp40LYl48SlzP3AzQjIhu8eRB-xCAT4HjvIFG3kA-8"
     />
 
-    <!-- FAVICONS -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=5" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5" />
@@ -18,16 +16,29 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Neutral default tags -->
     <title>Sumukh Dental Clinic</title>
     <meta
       name="description"
       content="Sumukh Dental Clinic and Orthodontic Centre in Ahmedabad."
     />
+
+    <!-- GOOGLE TAG -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FEWY6X9B1E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+
+      gtag("js", new Date());
+
+      gtag("config", "G-FEWY6X9B1E");
+      gtag("config", "AW-11330826115");
+    </script>
   </head>
 
   <body>
-    <!-- Meta Pixel fallback -->
     <noscript>
       <img
         height="1"
@@ -40,19 +51,6 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- GOOGLE ADS (GTAG) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11330826115"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "AW-11330826115");
-      gtag("config", "G-FEWY6X9B1E");
-    </script>
 
     <!-- META PIXEL -->
     <script>
