@@ -20,6 +20,12 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -30,10 +36,27 @@ function ScrollToTop() {
   return null;
 }
 
+function AnalyticsTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "page_view", {
+        page_path: location.pathname + location.search + location.hash,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    }
+  }, [location]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
