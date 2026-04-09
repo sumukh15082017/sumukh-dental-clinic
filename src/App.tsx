@@ -37,17 +37,22 @@ function ScrollToTop() {
 }
 
 function AnalyticsTracker() {
-  const location = useLocation();
+  const { pathname, search, hash } = useLocation();
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "page_view", {
-        page_path: location.pathname + location.search + location.hash,
+    if (typeof window === "undefined" || !window.gtag) return;
+
+    // Wait one frame so Helmet/title/meta updates finish before sending page_view
+    const raf = window.requestAnimationFrame(() => {
+      window.gtag?.("event", "page_view", {
+        page_path: `${pathname}${search}${hash}`,
         page_location: window.location.href,
         page_title: document.title,
       });
-    }
-  }, [location]);
+    });
+
+    return () => window.cancelAnimationFrame(raf);
+  }, [pathname, search, hash]);
 
   return null;
 }
