@@ -107,18 +107,26 @@ export default function AppointmentForm() {
 
       if (insertError) throw insertError;
 
-      const { error: notifyError } = await supabase.functions.invoke(
-        "send-appointment-notification",
-        {
-          body: formData,
-        }
-      );
-
-      if (notifyError) throw notifyError;
-
+      // Fire tracking immediately after confirmed appointment save
       trackGoogleAdsConversion();
       trackGA4Lead();
       trackMetaLead();
+
+      // Notification should not block conversion tracking
+      try {
+        const { error: notifyError } = await supabase.functions.invoke(
+          "send-appointment-notification",
+          {
+            body: formData,
+          }
+        );
+
+        if (notifyError) {
+          console.error("Notification error:", notifyError);
+        }
+      } catch (notifyErr) {
+        console.error("Notification invoke failed:", notifyErr);
+      }
 
       setSubmitStatus("success");
       setFormData({
@@ -407,8 +415,8 @@ export default function AppointmentForm() {
                 </li>
               </ul>
             </div>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );
