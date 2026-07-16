@@ -87,9 +87,9 @@ export default function Testimonials() {
       poster: "/videos/smile-makeover-patient-review-ahmedabad.jpg",
     },
     {
-      title: "Smile Makeover Patient Review Ahmedabad",
-      src: "/videos/smile-makeover-patient-review-ahmedabad.mp4",
-      poster: "/videos/smile-makeover-patient-review-ahmedabad.jpg",
+      title: "Patient Review After Smile Correction With Damon Braces Ahmedabad",
+      src: "/videos/patient-review-after-smile-correction-with-damon-braces-ahmedabad.mp4",
+      poster: "/videos/patient-review-after-smile-correction-with-damon-braces-ahmedabad.jpg",
     },
     {
       title: "Smile Makeover Patient Review Ahmedabad",
