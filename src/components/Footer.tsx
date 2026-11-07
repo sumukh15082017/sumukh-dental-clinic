@@ -172,8 +172,8 @@ export default function Footer() {
                   onClick={() => trackFooterClick("map")}
                   className="text-blue-100 hover:underline"
                 >
-                  GF-20, Sudarshan Gold,
-                  <br />Opp. Hyundai Service Centre,
+                  Shop No 12, Satyamev Eminence,
+                  <br />Behind Mcdonalds,
                   <br />Science City Road,
                   <br />Ahmedabad 380060
                 </a>
