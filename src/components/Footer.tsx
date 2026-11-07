@@ -172,7 +172,8 @@ export default function Footer() {
                   onClick={() => trackFooterClick("map")}
                   className="text-blue-100 hover:underline"
                 >
-                  Shop No 12, Satyamev Eminence,
+                  Shop No 12,
+		  <br />Satyamev Eminence,
                   <br />Behind Mcdonalds,
                   <br />Science City Road,
                   <br />Ahmedabad 380060
