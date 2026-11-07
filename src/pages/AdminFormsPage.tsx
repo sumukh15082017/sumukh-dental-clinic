@@ -651,8 +651,7 @@ export default function AdminFormsPage() {
         pdf.setTextColor(100, 116, 139);
         pdf.setFontSize(9.5);
         const address =
-          "Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060 • +91 8799527524
-";
+          "Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060 • +918799527524";
         const addressLines = pdf.splitTextToSize(address, contentWidth - 42);
         pdf.text(addressLines, margin + 36, y + 26);
 
