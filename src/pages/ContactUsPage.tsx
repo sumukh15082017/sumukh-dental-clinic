@@ -18,7 +18,7 @@ import RelatedTreatments from "../components/RelatedTreatments";
 export default function ContactUsPage() {
   const clinicDetails = {
     name: "Sumukh Dental Clinic",
-    addressLine1: "GF-20, Sudarshan Gold, Opp. Hyundai Service Centre",
+    addressLine1: "Shop No 12, Satyamev Eminence, Behind Mcdonalds",
     addressLine2: "Science City-Sola, Ahmedabad, Gujarat 380060",
     phoneDisplay: "+91 87995 27524",
     phoneLink: "+918799527524",

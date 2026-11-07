@@ -178,8 +178,7 @@ export default function PatientIntakePage() {
                   Sumukh Dental Clinic • Dr. Dipen Thakker • Ahmedabad
                 </p>
                 <p className="text-sm text-slate-500 mt-1">
-                  GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City
-                  Sola, Ahmedabad 380060 • +91 8799527524
+                 Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060 • +91 8799527524
                 </p>
               </div>
             </div>

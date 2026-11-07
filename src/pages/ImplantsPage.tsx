@@ -37,7 +37,7 @@ const DOCTOR_NAME = "Dr. Dipen Thakker";
 const DOCTOR_DEGREE = "MDS Orthodontist";
 const PHONE = "+91-8799527524";
 const ADDRESS_STREET =
-  "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola";
+  "Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060";
 const ADDRESS_CITY = "Ahmedabad";
 const ADDRESS_STATE = "Gujarat";
 const ADDRESS_PINCODE = "380060";

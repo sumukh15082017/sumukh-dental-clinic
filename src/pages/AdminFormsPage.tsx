@@ -447,7 +447,7 @@ export default function AdminFormsPage() {
                 <h1>Patient Information & Consent Form</h1>
                 <div class="header-subtitle">Sumukh Dental Clinic • Dr. Dipen Thakker • Ahmedabad</div>
                 <div class="header-address">
-                  GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola, Ahmedabad 380060 • +91 8799527524
+                   Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060 • +91 8799527524
                 </div>
               </div>
             </div>
@@ -651,7 +651,8 @@ export default function AdminFormsPage() {
         pdf.setTextColor(100, 116, 139);
         pdf.setFontSize(9.5);
         const address =
-          "GF 20, Sudarshan Gold, Opp Hyundai Service Centre, Science City Sola, Ahmedabad 380060 • +91 8799527524";
+          "Shop No 12, Satyamev Eminence, Behind Mcdonalds, Science City Sola, Ahmedabad 380060 • +91 8799527524
+";
         const addressLines = pdf.splitTextToSize(address, contentWidth - 42);
         pdf.text(addressLines, margin + 36, y + 26);
 
